@@ -22,8 +22,8 @@ I propose to develop a comprehensive website for a car dealership named FakeDeal
 ## Project Plan
 
 ### Nov 17
-- [ ] **Frontend Structure:** Set up the basic structure of the frontend, including the home page and car listing pages.
-- [ ] **Backend Setup:** Initialize the C# API and set up the database schema for car information.
+- [X] **Frontend Structure:** Set up the basic structure of the frontend, including the home page and car listing pages.
+- [X] **Backend Setup:** Initialize the C# API and set up the database schema for car information.
 
 ### Nov 24
 - [ ] **Car Search Functionality:** Implement the search feature to fetch and display car listings based on user queries.
