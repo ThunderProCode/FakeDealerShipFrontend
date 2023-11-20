@@ -1,0 +1,9 @@
+:root {
+    --text-color: white;
+    --primary-color: #8B0B0C;
+    --background-color: #060606;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold : 600;
+    --bold: 700;
+}
