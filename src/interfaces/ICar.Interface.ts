@@ -1,0 +1,18 @@
+export interface ICar {
+    Id: number,
+    Make: string,
+    Model: string,
+    Year: Number,
+    Color: string,
+    Body: string,
+    Engine: string,
+    Seats: number,
+    Mileage: number,
+    Mpg: number,
+    Description: string,
+    Price: number,
+    VIN: string,
+    Created: Date,
+    Features: string[],
+    Images: string[],
+}
