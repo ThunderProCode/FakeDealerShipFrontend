@@ -7,32 +7,36 @@ interface ICarCardProps {
     Car: ICar;
 }
 
-const CarCard: React.FC = (): JSX.Element => {
+const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
+
+    const Car = props.Car;
+    console.log(Car);
+
     return(
         <article className="car-card">
-            <img className="card-image" src="https://vexgateway.fastly.carvana.io/2002604082/hero-no-letters.jpg" alt="Toyota Camry" />
+            <figure className="card-image">
+                <img src={Car.images[0]} alt="Toyota Camry" />
+            </figure>
             <section className="card-info">
-                <div className="card-title-section">
-                    <h2 className="card-title">Toyota Camry</h2>
-                    <p className="card-price">Price: 34,000$</p>
-                    <button className="card-like-btn">
-                        <FaRegHeart/>
-                    </button>
-                </div>
-                <div className="card-details-section">
+                <header className="card-header">
+                    <section className="card-title-section">
+                        <h2 className="card-title">{`${Car.make} ${Car.model}`}</h2>
+                        <p className="card-price">Price: {`${Car.price}`}$</p>
+                        <button className="card-like-btn">
+                            <FaRegHeart/>
+                        </button>
+                    </section>
                     <div className="card-details">
-                        <p><span>Year: </span>2020</p>
-                        <p><span>Miles: </span>34,000</p>
+                        <p><span>Year: </span>{`${Car.year}`}</p>
+                        <p><span>Miles: </span>{`${Car.price}`}</p>
                     </div>
-                    <div className="card-description">
-                        <p>
-                        Lorem Ipsum is simply dummy text of the printing 
-                        and typesetting industry. Lorem Ipsum has been the industry's 
-                        standard dummy text ever since the 1500s, when an unknown 
-                        printer took a galley of type and scrambled it to make a type 
-                        specimen book.
-                        </p>
-                    </div>
+                </header>
+                <div className="card-description">
+                    <p>
+                        {
+                            `${Car.description}`
+                        }
+                    </p>
                 </div>
                 <div className="card-buttons-section">
                     <button className="card-btn">
@@ -44,6 +48,7 @@ const CarCard: React.FC = (): JSX.Element => {
                 </div>
             </section>
         </article>
+        
     );
 }
 
