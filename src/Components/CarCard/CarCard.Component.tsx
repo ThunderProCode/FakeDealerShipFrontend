@@ -21,7 +21,6 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                 <header className="card-header">
                     <section className="card-title-section">
                         <h2 className="card-title">{`${Car.make} ${Car.model}`}</h2>
-                        <p className="card-price">Price: {`${Car.price}`}$</p>
                         <button className="card-like-btn">
                             <FaRegHeart/>
                         </button>
@@ -30,6 +29,7 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                         <p><span>Year: </span>{`${Car.year}`}</p>
                         <p><span>Miles: </span>{`${Car.price}`}</p>
                     </div>
+                    <p className="card-price">Price: {`${Car.price}`}$</p>
                 </header>
                 <div className="card-description">
                     <p>
@@ -39,10 +39,10 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                     </p>
                 </div>
                 <div className="card-buttons-section">
-                    <button className="card-btn">
+                    <button type="button" className="card-btn">
                         View Details
                     </button>
-                    <button className="card-btn">
+                    <button type="button" className="card-btn">
                         Order This Car
                     </button>
                 </div>
