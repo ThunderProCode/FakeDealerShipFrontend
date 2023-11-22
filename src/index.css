@@ -1,6 +1,6 @@
 @import './vars.css';
 
-html, div, nav, h1, h2, p, ul, li, ol, a, button,figure, section, article {
+html, div, nav, h1, h2, p, ul, li, ol, a, button,figure, section, article, input, select, option {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

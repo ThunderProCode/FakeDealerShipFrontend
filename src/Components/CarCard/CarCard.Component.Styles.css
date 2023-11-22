@@ -1,8 +1,11 @@
 .car-card {
     margin-top: 1em;
-    min-width: 26%;
-    max-width: 26%;
+    min-width: 22%;
+    max-width: 22%;
     height: 31em;
+
+    /* margin-left: .5em;
+    margin-right: .5em; */
 
     background-color: var(--secondary-color);
     overflow: hidden;
@@ -47,7 +50,7 @@
 }
 
 .card-title {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .card-like-btn {
@@ -63,6 +66,11 @@
 
     background-color: var(--primary-color);
     color: var(--text-color);
+    transition: background-color 0.5s ease 0s;
+}
+
+.card-like-btn:hover {
+    background-color: #3e0000;
 }
 
 .card-details p {
@@ -106,4 +114,16 @@
 
 .card-btn:hover {
     background-color: #3e0000;
+}
+
+@media (max-width: 1200px) {
+    .card-btn {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1100px) {
+    .card-btn {
+        font-size: .8em;
+    }
 }

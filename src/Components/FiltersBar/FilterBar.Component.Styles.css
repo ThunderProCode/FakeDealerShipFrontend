@@ -1,0 +1,52 @@
+.filter-bar {
+    width: 95%;
+    min-height: 4em;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.filter-buttons {
+    width: 40%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-buttons select {
+    height: 45%;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: .2em;
+    padding: .5em;
+}
+
+.filter-buttons option {
+    border: none;
+    transition: background-color 0.5s ease 0s;
+}
+
+.filter-buttons option:hover {
+    background: #3e0000;
+}
+
+.filter-buttons select:focus {
+    outline: none;
+}
+
+
+.search-bar-container {
+    width: 60%;
+}
+
+.search-bar {
+    width: 100%;
+}
+
