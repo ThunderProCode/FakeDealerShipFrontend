@@ -3,13 +3,10 @@
     min-width: 22%;
     max-width: 22%;
     height: 31em;
-
-    /* margin-left: .5em;
-    margin-right: .5em; */
-
     background-color: var(--secondary-color);
     overflow: hidden;
     border-radius: 1em;
+    cursor:default;
 }
 
 .card-image {
@@ -67,6 +64,7 @@
     background-color: var(--primary-color);
     color: var(--text-color);
     transition: background-color 0.5s ease 0s;
+    cursor: pointer;
 }
 
 .card-like-btn:hover {
@@ -101,6 +99,7 @@
 }
 
 .card-btn {
+    cursor: pointer;
     width: 48%;
     height: 2em;
     border:none;
