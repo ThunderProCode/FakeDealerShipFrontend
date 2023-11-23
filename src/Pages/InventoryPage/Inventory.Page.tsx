@@ -9,17 +9,14 @@ const InventoryPage: React.FC =(): JSX.Element => {
 
     const { Cars, loading } = useCarsFetching();
 
-    if(loading) {
-        return <p>Loading.....</p>;
-    }
-
     return(
         <div className="inventory-page">
             <Navbar/>
             <FilterBar/>
             <ul className="cards-container">
                 {
-                    Cars.map(Car =>{
+                    loading ? <p>Loading....</p>: 
+                    Cars.map(Car => {
                         return (
                             <CarCard Car={Car} key={Car.id}/>
                         )}

@@ -8,6 +8,7 @@ const useCarsFetching = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
+        // console.log("Component Mounted");
         const fetchDataAndHandleLoading = async () => {
             try {
                 const result = await fetchCars();
@@ -17,7 +18,14 @@ const useCarsFetching = () => {
                 setLoading(false);
             }
         };
-        fetchDataAndHandleLoading();
+
+        if(loading){
+            fetchDataAndHandleLoading();
+        }
+
+        return () => {
+            // console.log("Component Unmounted");
+        }
     },[]);
     return { Cars, loading };
 };

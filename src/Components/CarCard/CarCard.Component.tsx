@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import './CarCard.Component.Styles.css';
 import { ICar } from "../../interfaces/ICar.Interface";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { addLikedCar, selectLikedCars, removeLikedCar } from "../../features/myGarageSlice";
 
 interface ICarCardProps {
     Car: ICar;
@@ -9,18 +11,24 @@ interface ICarCardProps {
 
 const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
 
-    const [ liked, setLiked ] = useState<boolean>(false);
+    const { Car } = props;
+    const dispatch = useDispatch();
+    const likedCars = useSelector(selectLikedCars);
+
+    const liked = likedCars.includes(Car.id);
 
     const selectHeart = () => {
         return liked ? <FaHeart/> : <FaRegHeart/>;
     }
 
     const handleLikeClick = () => {
-        setLiked(!liked);
+        if(liked){
+            dispatch(removeLikedCar(Car.id));
+        } else {
+            dispatch(addLikedCar(Car.id));
+        }
+        console.log(likedCars);
     }
-
-    const Car = props.Car;
-    console.log(Car);
 
     return(
         <article className="car-card">

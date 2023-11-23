@@ -1,14 +1,17 @@
 .filter-bar {
-    border-radius: .4em;
     width: 60%;
+    border-radius: .4em;
     min-height: 4em;
-    background-color: var(--secondary-color);
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 1em;
-    padding-right: 1em;
+
+    background-color: var(--secondary-color);
 }
 
 .filter-buttons {

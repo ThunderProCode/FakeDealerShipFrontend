@@ -8,9 +8,9 @@ const FilterBar:React.FC = ():JSX.Element => {
         <div className="filter-bar">
             <section className="filter-buttons">
 
-                <DropDownMenu title="Body"/>
-                <DropDownMenu title="Year"/>
-                <DropDownMenu title="Price"/>
+                <DropDownMenu title="Body" options={["Sedan","SUV","Hatchback","Coupe","Pickup"]}/>
+                <DropDownMenu title="Year" options={["Increasing","Decreasing"]}/>
+                <DropDownMenu title="Price" options={["Increasing","Decreasing"]}/>
                 <DropDownMenu title="Make"/>
 
             </section>
