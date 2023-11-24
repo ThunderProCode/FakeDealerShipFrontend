@@ -3,10 +3,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface FilterState {
     filterBy: string;
 }
-
+  
 const initialState: FilterState = {
     filterBy: 'no-filter'
-}
+};
 
 const filterSlice = createSlice({
     name: 'filter',
