@@ -1,12 +1,17 @@
 import React from 'react';
 import './App.css';
+import store from './store';
 import { useRoutes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+// Components
 import HomePage from './Pages/HomePage/Home.Page';
 import ComparePage from './Pages/ComparePage/Compare.Page';
-import InventoryPage from './Pages/InventoryPage/Inventory.Page';
 import MyGaragePage from './Pages/MyGarage/MyGarage.Page';
-import store from './store';
-import { Provider } from 'react-redux';
+import CarDetailsView from './Pages/InventoryPage/CarDetailsView/CarDetailsView';
+import InventoryLayout from './Pages/InventoryPage/Layout/InventoryLayout';
+import CardsView from './Pages/InventoryPage/CardsView/CardsView';
+
 
 const App:React.FC = (): JSX.Element => {
 
@@ -24,8 +29,19 @@ const App:React.FC = (): JSX.Element => {
 
   const inventoryRoute = {
     path: 'inventory',
-    element: <InventoryPage/>,
-    children: []
+    element: <InventoryLayout/>,
+    children: [
+      {
+        path: 'cars',
+        element: <CardsView/>,
+        children: []
+      },
+      {
+        path: 'car/:id',
+        element: <CarDetailsView/>,
+        children: []
+      }
+    ]
   };
 
   const myGarageRoute = {

@@ -22,7 +22,7 @@ const Navbar: React.FC = (): JSX.Element => {
                     <ul className="nav-links">
                         <li><NavLink to='/' className={getClassName} >Home</NavLink></li>
                         <li><NavLink to='/compare' className={getClassName}>Compare</NavLink></li>
-                        <li><NavLink to='/inventory' className={getClassName}>Inventory</NavLink></li>
+                        <li><NavLink to='/inventory/cars' className={getClassName}>Inventory</NavLink></li>
                         <li><NavLink to='/mygarage' className={getClassName}>MyGarage</NavLink></li>
                     </ul>
                     <ul className="nav-info-links">

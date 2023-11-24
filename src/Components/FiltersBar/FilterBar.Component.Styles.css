@@ -35,6 +35,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 1s ease 0s;
+}
+
+.reset-btn:hover {
+    background-color: var(--third-color);
 }
 
 .reset-btn svg {
