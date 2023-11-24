@@ -1,37 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import './CarDetailsView.css';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
 import { useParams } from "react-router";
 import { getCarById } from "../../../Services/carService";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
+import { removeLikedCar, addLikedCar } from "../../../features/myGarageSlice";
 
 const CarDetailsView:React.FC = ():JSX.Element => {
 
     const { carId } = useParams();
     const cars = useSelector((state:RootState) => state.cars.data);
-
+    const likedCars = useSelector((state:RootState) => state.likedCars.likedCars);
     const parsedCarId = carId? parseInt(carId,10) : undefined;
     const car = getCarById(cars,parsedCarId);
+    const [ displayedImage, setDisplayedImage ] = useState(car?.images[0]);
+    const dispatch = useDispatch();
 
     if(car){
+
+        const liked = likedCars.includes(car.id);
+        
+        const selectHeart = () => {
+            return liked ? <FaHeart/> : <FaRegHeart/>;
+        }
+
+        const handleImageClick = (image: string) => {
+            setDisplayedImage(image);
+        }
+        
+        const handleLikeClick = () => {
+            if(liked){
+                dispatch(removeLikedCar(car.id));
+            } else {
+                dispatch(addLikedCar(car.id))
+            }
+        }
         return(
             <article className="car-view-container">
                <section className="car-images">
                     <div className="left-side">
                         <div className="displayed-image">
-                            <img src={car.images[0]} alt="" />
+                            <img src={displayedImage} alt="Car" />
                         </div>
                         <div className="buttons-container">
-                            <button className="like-btn"><FaRegHeart/></button>
+                            <button className="like-btn" onClick={handleLikeClick}>{ selectHeart() }</button>
                             <button className="order-btn">Order This Car</button>
                         </div>
                     </div>
                     <div className="right-side">
                         <div className="available-images">
                             {
-                                car.images.map((image) => <div className="image-to-select"> <img src={image} /> </div>)
+                                car.images.map((image) => <div className={`image-to-select ${displayedImage === image ? 'image-selected': ''}`} key={image} onClick={() => handleImageClick(image)}> <img src={image} alt="Car"/> </div>)
                             }
                         </div>
                     </div>
