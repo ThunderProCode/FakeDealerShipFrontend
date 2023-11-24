@@ -4,10 +4,12 @@ import './Compare.Page.Styles.css';
 
 const ComparePage: React.FC = (): JSX.Element => {
     return(
-        <div className="compare-page">
+        <>
             <Navbar/>
-            <h1>Compare Page</h1>
-        </div>
+            <div className="compare-page">
+                <h1>Compare Page</h1>
+            </div>
+        </>
     );
 }
 

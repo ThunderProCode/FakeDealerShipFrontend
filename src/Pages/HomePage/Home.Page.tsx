@@ -9,13 +9,15 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = (props) => {
     return(
-        <div className="home-page">
+        <>
             <Navbar/>
-            <div className="slogan-container">
-                <h1>Drive into Dreams, Roll out in Style</h1>
-                <Link to='/inventory'>Your Journey Starts Here</Link>
+            <div className="home-page">
+                <div className="slogan-container">
+                    <h1>Drive into Dreams, Roll out in Style</h1>
+                    <Link to='/inventory'>Your Journey Starts Here</Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
