@@ -1,30 +1,30 @@
 import React from 'react';
 import './App.css';
 import store from './store';
-import { useRoutes } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 // Components
-import HomePage from './Pages/HomePage/Home.Page';
-import ComparePage from './Pages/ComparePage/Compare.Page';
-import MyGaragePage from './Pages/MyGarage/MyGarage.Page';
-import CarDetailsView from './Pages/InventoryPage/CarDetailsView/CarDetailsView';
-import InventoryLayout from './Pages/InventoryPage/Layout/InventoryLayout';
-import CardsView from './Pages/InventoryPage/CardsView/CardsView';
+import HomeView from './Pages/Home/HomeView';
+import CompareView from './Pages/Compare/CompareView';
+import MyGarageView from './Pages/MyGarage/MyGarageView';
+import CarDetailsView from './Pages/Inventory/CarDetailsView/CarDetailsView';
+import InventoryLayout from './Pages/Inventory/InventoryLayout/InventoryLayout';
+import CardsView from './Pages/Inventory/CardsView/CardsView';
+import MainLayout from './Pages/Layout/MainLayout';
 
 
 const App:React.FC = (): JSX.Element => {
 
-  const homeRoute = {
+  const mainRoutes = {
     path: '/',
-    element: <HomePage/>,
-    children: []
-  };
-
-  const compareRoute = {
-    path: 'compare',
-    element: <ComparePage/>,
-    children: []
+    element: <MainLayout />,
+    children: [
+      { path: '/', element: <HomeView /> },
+      { path: 'inventory', element: <Navigate to='inventory/cars'/> },
+      { path: 'myGarage', element: <MyGarageView/> },
+      { path: 'compare', element: <CompareView /> }
+    ]
   };
 
   const inventoryRoute = {
@@ -37,7 +37,7 @@ const App:React.FC = (): JSX.Element => {
         children: []
       },
       {
-        path: 'car/:id',
+        path: 'car/:carId',
         element: <CarDetailsView/>,
         children: []
       }
@@ -46,11 +46,11 @@ const App:React.FC = (): JSX.Element => {
 
   const myGarageRoute = {
     path: 'myGarage',
-    element: <MyGaragePage/>,
+    element: <MyGarageView/>,
     children: []
   };
 
-  const routing = useRoutes([homeRoute,compareRoute, inventoryRoute, myGarageRoute]);
+  const routing = useRoutes([mainRoutes,inventoryRoute,myGarageRoute]);
   return (
     <Provider store={store}>
       {routing}

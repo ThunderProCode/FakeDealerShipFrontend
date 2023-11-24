@@ -69,7 +69,7 @@
 }
 
 .card-like-btn:hover {
-    background-color: #3e0000;
+    background-color: var(--third-color);
 }
 
 .card-details p {

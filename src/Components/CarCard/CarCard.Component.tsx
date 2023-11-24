@@ -4,6 +4,7 @@ import { ICar } from "../../interfaces/ICar.Interface";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addLikedCar, selectLikedCars, removeLikedCar } from "../../features/myGarageSlice";
+import { useNavigate } from "react-router";
 
 interface ICarCardProps {
     Car: ICar | undefined;
@@ -12,6 +13,7 @@ interface ICarCardProps {
 const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
 
     const { Car } = props;
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const likedCars = useSelector(selectLikedCars);
 
@@ -27,7 +29,10 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
             } else {
                 dispatch(addLikedCar(Car.id));
             }
-            console.log(likedCars);
+        }
+
+        const handleDetailsClick = () => {
+            navigate(`/inventory/car/${Car.id}`);
         }
     
         return(
@@ -59,7 +64,7 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                         </p>
                     </div>
                     <div className="card-buttons-section">
-                        <button type="button" className="card-btn">
+                        <button type="button" className="card-btn" onClick={handleDetailsClick}>
                             Details
                         </button>
                         <button type="button" className="card-btn">

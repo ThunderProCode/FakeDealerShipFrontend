@@ -1,7 +1,7 @@
 import { ICar } from '../interfaces/ICar.Interface';
 
-export const getCarById = (cars: ICar[], carId:string | undefined): ICar | undefined => {
-    return cars.find((car) => car.id === carId);
+export const getCarById = (Cars: ICar[], carId:number | undefined): ICar | undefined => {
+    return Cars.find((car) =>car.id === carId);
 }
 
 export const filterCarsBy = (Cars: ICar[], filter:string): ICar[] => {
