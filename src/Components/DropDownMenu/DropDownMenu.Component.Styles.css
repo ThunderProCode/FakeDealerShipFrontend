@@ -15,6 +15,10 @@
     justify-content: center;
 }
 
+.drop-btn svg {
+    margin-left: 1em;
+}
+
 .dropdown {
     height: 100%;
     position: relative;

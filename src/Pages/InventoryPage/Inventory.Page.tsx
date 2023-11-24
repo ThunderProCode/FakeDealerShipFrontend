@@ -24,6 +24,20 @@ const InventoryPage: React.FC =(): JSX.Element => {
 
     const filteredCars = filterCarsBy(cars,filterBy);
 
+    const result = () => {
+        if(filteredCars.length > 0){
+            return (
+                filteredCars.map(Car => (
+                    <CarCard Car={Car} key={Car.id}/>
+                ))
+            )
+        } else {
+            return(
+                <p>No Cars Found</p>
+            )
+        }
+    }
+
     return(
         <>
             <Navbar/>
@@ -32,11 +46,7 @@ const InventoryPage: React.FC =(): JSX.Element => {
                 <ul className="inventory-cards-container">
                     {
                         carsStatus === 'loading' ? <p>Loading....</p>:
-                        filteredCars.map(Car => {
-                            return (
-                                <CarCard Car={Car} key={Car.id}/>
-                            )}
-                        )
+                        result()
                     }
                 </ul>
             </div>
