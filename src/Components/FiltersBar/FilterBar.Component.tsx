@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react';
+import React,{ useEffect, useState } from 'react';
 import './FilterBar.Component.Styles.css';
 import { FaSearch } from "react-icons/fa";
 import DropDownMenu from '../DropDownMenu/DropDownMenu.Component';
@@ -9,10 +9,21 @@ import { BiReset } from "react-icons/bi";
 
 const FilterBar:React.FC = ():JSX.Element => {
 
+    const [ inputValue, setInputValue ] = useState('');
     const dispatch = useDispatch();
 
     const handleReset = () => {
         dispatch(switchFilter('no-filter'))    
+    }
+
+    const updateInputValue = (event:React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        setInputValue(newValue);
+    }
+
+    const handleKeyWordSearch = () => {
+        dispatch(switchFilter(`keyword-${inputValue}`));
+        setInputValue('');
     }
 
     useEffect(()=>{
@@ -31,8 +42,8 @@ const FilterBar:React.FC = ():JSX.Element => {
 
             </section>
             <form className="search-bar-container">
-                <input className="search-bar" type="text" />
-                <button className="search-btn" type="button">Search<FaSearch/></button>
+                <input  value={inputValue} onChange={event => updateInputValue(event)} className="search-bar" type="text" />
+                <button className="search-btn" type="button" onClick={handleKeyWordSearch}>Search<FaSearch/></button>
             </form>
         </div>
     );

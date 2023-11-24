@@ -5,6 +5,13 @@ export const getCarById = (cars: ICar[], carId:string): ICar | undefined => {
 }
 
 export const filterCarsBy = (Cars: ICar[], filter:string): ICar[] => {
+    if(filter.includes("keyword")){
+        const keyword = filter.match(/-(\w+)/);
+        if(keyword){
+            return filterByKeyword(Cars,keyword[1]);
+        }
+    }
+
     if(filter.includes("body")){
         const body = filter.match(/-(\w+)/);
         if(body){
@@ -60,4 +67,13 @@ const filterByBody = (Cars: ICar[], body:string): ICar[] => {
 const filterByMake = (Cars: ICar[], make: string): ICar[] => {
     const carsToSort = [...Cars];
     return carsToSort.filter((car) => car.make === make);
+}
+
+const filterByKeyword = (Cars:ICar[], keyword: string) => {
+    const carsToSort = [...Cars];
+    return carsToSort.filter((car) =>
+      Object.values(car).some((value) =>
+        typeof value === 'string' && value.toLowerCase().includes(keyword.toLowerCase())
+      )
+    );
 }
