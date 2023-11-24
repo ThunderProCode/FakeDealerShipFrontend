@@ -1,0 +1,28 @@
+.filter-button {
+    margin-right: 1em;
+    height: 100%;
+    padding: .6em;
+    border-radius: .2em;
+    font-size: 1em;
+
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 1s ease 0s;
+}
+
+.filter-button:hover {
+    background-color: var(--third-color);
+}
+
+.filter-button svg {
+    margin-left: .8em;
+}
+
+.increasing {
+    transform: rotate(180deg);
+}

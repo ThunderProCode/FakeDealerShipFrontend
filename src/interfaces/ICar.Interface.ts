@@ -2,7 +2,7 @@ export interface ICar {
     id: string,
     make: string,
     model: string,
-    year: Number,
+    year: number,
     color: string,
     body: string,
     engine: string,

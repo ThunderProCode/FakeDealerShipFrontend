@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink,Link, Outlet} from 'react-router-dom';
-import Logo from '../images/Logo.svg';
+import Logo from '../../assets/svgs/Logo.svg';
 import './Navbar.Component.Styles.css';
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";

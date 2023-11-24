@@ -10,13 +10,28 @@
     justify-content: center;
 }
 
-.cards-container {
-    list-style: none;
-    max-width: 100%;
+.mygarage-page::-webkit-scrollbar {
+    width: .5em;
     height: 100%;
+}
+
+.mygarage-page::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
+
+.mygarage-page::-webkit-scrollbar-thumb {
+    border-radius: .1em;
+    background-color: var(--primary-color);
+}
+
+.mygarage-cards-container {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
 }
 

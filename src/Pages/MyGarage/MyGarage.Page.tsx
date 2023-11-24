@@ -15,11 +15,11 @@ const MyGaragePage: React.FC = (): JSX.Element => {
         <>
             <Navbar/>
             <div className="mygarage-page">
-                <ul className="cards-container">
+                <ul className="mygarage-cards-container">
                     {
                         likedCars.length === 0 ? <p>You have not liked any Cars</p> :
                         likedCars.map((CarId) => {
-                            return <CarCard Car ={ getCarById( cars, CarId) }/>
+                            return <CarCard key={CarId} Car ={ getCarById( cars, CarId) }/>
                         })
                     }
                 </ul>

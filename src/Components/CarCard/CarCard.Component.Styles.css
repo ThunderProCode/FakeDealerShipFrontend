@@ -1,8 +1,9 @@
 .car-card {
     margin-top: 1em;
-    min-width: 22%;
-    max-width: 30%;
+    min-width: 26%;
+    max-width: 26%;
     height: 70%;
+    
     background-color: var(--secondary-color);
     overflow: hidden;
     border-radius: 1em;

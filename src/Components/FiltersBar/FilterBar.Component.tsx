@@ -1,7 +1,8 @@
 import React from 'react';
 import './FilterBar.Component.Styles.css';
-import DropDownMenu from '../DropDownMenu/DropDownMenu.Component';
 import { FaSearch } from "react-icons/fa";
+import DropDownMenu from '../DropDownMenu/DropDownMenu.Component';
+import FilterButton from '../FilterButton/FilterButton.Component';
 
 const FilterBar:React.FC = ():JSX.Element => {
     return(
@@ -9,8 +10,8 @@ const FilterBar:React.FC = ():JSX.Element => {
             <section className="filter-buttons">
 
                 <DropDownMenu title="Body" options={["Sedan","SUV","Hatchback","Coupe","Pickup"]}/>
-                <DropDownMenu title="Year" options={["Increasing","Decreasing"]}/>
-                <DropDownMenu title="Price" options={["Increasing","Decreasing"]}/>
+                <FilterButton title="Year"/>
+                <FilterButton title="Price"/>
                 <DropDownMenu title="Make"/>
 
             </section>

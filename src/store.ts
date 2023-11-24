@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import likedCarsReducer from './features/myGarageSlice';
 import carsReducer, { fetchCars } from './features/carsSlice';
+import filterReducer from './features/filterSlice';
 
 const initialState = localStorage.getItem('liked-cars')
     ? JSON.parse(localStorage.getItem('liked-cars')!): {};
@@ -8,7 +9,8 @@ const initialState = localStorage.getItem('liked-cars')
 const store = configureStore({
     reducer: {
         likedCars: likedCarsReducer,
-        cars: carsReducer
+        cars: carsReducer,
+        filterBy: filterReducer
     },
     preloadedState: initialState,
     devTools: process.env.NODE_ENV !== 'production'

@@ -6,30 +6,33 @@ import FilterBar from '../../Components/FiltersBar/FilterBar.Component';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { fetchCars } from '../../features/carsSlice';
+import { filterCarsBy } from '../../Services/carService';
 
 const InventoryPage: React.FC =(): JSX.Element => {
 
     const dispatch = useDispatch<AppDispatch>();
     const cars = useSelector((state: RootState) => state.cars.data);
-    const carsStatus = useSelector((state: RootState) => state.cars.status);
-    // const carsError = useSelector((state: RootState) => state.cars.error);
+    const carsStatus = useSelector((state: RootState) => state.cars.status); 
+    const filterBy = useSelector((state: RootState) => state.filterBy.filterBy);
 
     useEffect(() => {
         if(carsStatus === 'idle') {
             dispatch(fetchCars());
         }
+
     },[carsStatus,dispatch]);
 
+    const filteredCars = filterCarsBy(cars,filterBy);
 
     return(
         <>
             <Navbar/>
             <div className="inventory-page">
                 <FilterBar/>
-                <ul className="cards-container">
+                <ul className="inventory-cards-container">
                     {
-                        carsStatus === 'loading' ? <p>Loading....</p>: 
-                        cars.map(Car => {
+                        carsStatus === 'loading' ? <p>Loading....</p>:
+                        filteredCars.map(Car => {
                             return (
                                 <CarCard Car={Car} key={Car.id}/>
                             )}

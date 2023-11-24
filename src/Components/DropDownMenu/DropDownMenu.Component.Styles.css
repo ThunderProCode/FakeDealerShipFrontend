@@ -7,6 +7,7 @@
     font-size: 1em;
     border: none;
     cursor: pointer;
+    transition: background-color 1s ease 0s;
 }
 
 .dropdown {
@@ -41,5 +42,5 @@
   
 
 .dropdown:hover .drop-btn {
-    background-color: #3e0000;
+    background-color: var(--third-color);
 }

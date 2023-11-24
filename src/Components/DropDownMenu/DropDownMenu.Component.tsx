@@ -1,5 +1,7 @@
 import React from "react";
 import './DropDownMenu.Component.Styles.css';
+import { useDispatch } from 'react-redux';
+import { switchFilter } from "../../features/filterSlice";
 
 interface IDropDownMenuProps {
     title: string,
@@ -8,12 +10,19 @@ interface IDropDownMenuProps {
 
 const DropDownMenu:React.FC<IDropDownMenuProps> = (props):JSX.Element => {
 
+    const dispatch = useDispatch();
+
+    const handleClick = (option:string) => {
+        console.log('Clicked body');
+        dispatch(switchFilter(`body-${option}`));
+    }
+
     const renderOptions = () => {
         if(props.options){
             return(
                 <>{
                     props.options.map(option => {
-                        return <p key={option} >{`${option}`}</p>
+                        return <p key={option} onClick={() => {handleClick(option)}}>{`${option}`}</p>
                     })
                 }</>
             );
