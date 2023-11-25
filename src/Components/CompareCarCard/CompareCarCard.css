@@ -1,0 +1,108 @@
+.compare-car-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.compare-image {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: .5em;
+}
+
+.compare-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.compare-info {
+    margin-left: 1em;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-details {
+    list-style: none;
+    width: 100%;
+    height: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    color: var(--text-color);
+}
+
+.compare-details li {
+    width: 50%;
+    display: flex;
+}
+
+.compare-details span {
+    font-weight: bold;
+    margin-right: .2em;
+}
+
+.compare-price {
+    width: 100%;
+    height: 8%;
+
+    display: flex;
+}
+
+.compare-price p {
+    width: auto;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: .2em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-price span {
+    font-weight: bold;
+    margin-right: .2em;
+}
+
+
+.compare-buttons {
+    width: 100%;
+    height: 32%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.compare-buttons button {
+    width: 48%;
+    height: 30%;
+    border: none;
+    border-radius: .2em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease 0s;
+}
+
+.compare-buttons button:hover {
+    background-color: var(--third-color);
+}

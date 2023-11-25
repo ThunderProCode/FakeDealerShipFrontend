@@ -7,6 +7,7 @@ import CarMiniCard from '../../Components/CarMiniCard/CarMiniCard';
 import { getCarById } from '../../Services/carService';
 import { useDrop,useDrag } from 'react-dnd';
 import { ICar } from '../../interfaces/ICar.Interface';
+import CompareCarCard from '../../Components/CompareCarCard/CompareCarCard';
 
 const CompareView: React.FC = (): JSX.Element => {
 
@@ -14,6 +15,14 @@ const CompareView: React.FC = (): JSX.Element => {
     const likedCars = useSelector((state:RootState) => state.likedCars.likedCars);
     const [ droppedCar1, setDroppedCar1] = useState<ICar | null>(null);
     const [ droppedCar2, setDroppedCar2 ] = useState<ICar | null>(null);
+
+    const resetDroppedCar1 = ():void => {
+        setDroppedCar1(null);
+    }
+
+    const resetDropppedCar2 = (): void => {
+        setDroppedCar2(null);
+    }
 
     const [, drop1] = useDrop({
         accept: 'CAR',
@@ -37,7 +46,7 @@ const CompareView: React.FC = (): JSX.Element => {
         if(droppedCar1) {
             return(
                 <>
-                    <h2>Worked</h2>
+                    <CompareCarCard Car={droppedCar1} resetFunction={resetDroppedCar1}/>
                 </>
             );
         } else {
@@ -54,7 +63,7 @@ const CompareView: React.FC = (): JSX.Element => {
         if(droppedCar2){
             return(
                 <>
-                    <h2>Worked 2</h2>
+                    <CompareCarCard Car={droppedCar2} resetFunction={resetDropppedCar2}/>
                 </>
             )
         } else {
