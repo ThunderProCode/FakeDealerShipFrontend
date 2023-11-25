@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { fetchMakes } from '../../features/makesSlice';
 import { IoMdClose } from "react-icons/io";
+import { switchFilter } from '../../features/filterSlice';
 
 interface MakePanelProps {
     onClose: () => void
@@ -16,6 +17,11 @@ const MakePanel:React.FC<MakePanelProps> = (props):JSX.Element => {
     const dispatch = useDispatch<AppDispatch>();
     const makes = useSelector((state:RootState) => state.makes.data);
     const makesStatus = useSelector((state:RootState) => state.makes.status);
+
+    const handleClick = (make:string) => {
+        onClose();
+        dispatch(switchFilter(`make-${make}`));
+    }
 
     useEffect(() => {
         if(makesStatus === 'idle'){
@@ -32,7 +38,7 @@ const MakePanel:React.FC<MakePanelProps> = (props):JSX.Element => {
                         <button onClick={() => onClose()}><IoMdClose/></button>
                     </header>
                     {
-                        makes.map((make) => <li key={make}>{ `${make}` }</li>)
+                        makes.map((make) => <li key={make} onClick={() => handleClick(make)}>{ `${make}` }</li>)
                     }
                 </ul>
             </div>

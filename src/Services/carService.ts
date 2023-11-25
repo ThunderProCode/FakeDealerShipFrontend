@@ -66,7 +66,7 @@ const filterByBody = (Cars: ICar[], body:string): ICar[] => {
 
 const filterByMake = (Cars: ICar[], make: string): ICar[] => {
     const carsToSort = [...Cars];
-    return carsToSort.filter((car) => car.make === make);
+    return carsToSort.filter((car) => car.make.toLowerCase() === make);
 }
 
 const filterByKeyword = (Cars:ICar[], keyword: string) => {
