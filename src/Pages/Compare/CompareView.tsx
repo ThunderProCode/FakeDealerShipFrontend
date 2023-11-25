@@ -1,27 +1,85 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './CompareView.css';
 import { IoMdAddCircle } from "react-icons/io";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import CarMiniCard from '../../Components/CarMiniCard/CarMiniCard';
 import { getCarById } from '../../Services/carService';
+import { useDrop,useDrag } from 'react-dnd';
+import { ICar } from '../../interfaces/ICar.Interface';
 
 const CompareView: React.FC = (): JSX.Element => {
 
     const cars = useSelector((state:RootState) => state.cars.data);
     const likedCars = useSelector((state:RootState) => state.likedCars.likedCars);
+    const [ droppedCar1, setDroppedCar1] = useState<ICar | null>(null);
+    const [ droppedCar2, setDroppedCar2 ] = useState<ICar | null>(null);
+
+    const [, drop1] = useDrop({
+        accept: 'CAR',
+        drop: (item: { id: string }) => {
+            console.log('Dropped car with id: ', item.id, ' into section 1');
+            const car = getCarById(cars,parseInt(item.id,10));
+            if(car)setDroppedCar1(car);
+        },
+    });
+
+    const [, drop2] = useDrop({
+        accept: 'CAR',
+        drop: (item: { id: string }) => {
+            console.log('Dropped car with id: ', item.id, ' into section 1');
+            const car = getCarById(cars, parseInt(item.id,10));
+            if(car) setDroppedCar2(car);
+        },
+    });
+
+    const getContent1 = () => {
+        if(droppedCar1) {
+            return(
+                <>
+                    <h2>Worked</h2>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <IoMdAddCircle/>
+                    <h2>Drop a Car Here</h2>
+                </>
+            )
+        }
+    }
+
+    const getContent2 = () => {
+        if(droppedCar2){
+            return(
+                <>
+                    <h2>Worked 2</h2>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <IoMdAddCircle/>
+                    <h2>Drop a Car Here</h2>
+                </>
+            )
+        }
+    }
 
     return(
         <>
             <article className="compare-page">
                 <section className="compare-section">
-                    <div className="drop-section">
-                        <IoMdAddCircle/>
-                        <h2>Drop a Car Here</h2>
+                    <div ref={drop1} className="drop-section">
+                    {
+                        getContent1()
+                    }
                     </div>
-                    <div className="drop-section">
-                        <IoMdAddCircle/>
-                        <h2>Drop a Car Here</h2>
+                    <div ref={drop2} className="drop-section">
+                    {
+                        getContent2()
+                    }
                     </div>
                 </section>
                 <section className="liked-cars-section">

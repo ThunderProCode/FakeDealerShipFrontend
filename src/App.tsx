@@ -3,6 +3,8 @@ import './App.css';
 import store from './store';
 import { Navigate, useRoutes } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { DndProvider } from 'react-dnd/dist/core';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 // Components
 import HomeView from './Pages/Home/HomeView';
@@ -52,9 +54,11 @@ const App:React.FC = (): JSX.Element => {
 
   const routing = useRoutes([mainRoutes,inventoryRoute,myGarageRoute]);
   return (
-    <Provider store={store}>
-      {routing}
-    </Provider>
+    <DndProvider backend={HTML5Backend}>
+      <Provider store={store}>
+        {routing}
+      </Provider>
+    </DndProvider>
   );
 }
 
