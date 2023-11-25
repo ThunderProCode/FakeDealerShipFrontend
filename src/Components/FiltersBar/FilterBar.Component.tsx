@@ -7,8 +7,13 @@ import { useDispatch } from 'react-redux';
 import { switchFilter } from '../../features/filterSlice';
 import { BiReset } from "react-icons/bi";
 
-const FilterBar:React.FC = ():JSX.Element => {
+interface FilterBarProps {
+    handleMakeClick: () => void;
+}
 
+const FilterBar:React.FC<FilterBarProps> = (props):JSX.Element => {
+
+    const { handleMakeClick } = props;
     const [ inputValue, setInputValue ] = useState('');
     const dispatch = useDispatch();
 
@@ -37,7 +42,7 @@ const FilterBar:React.FC = ():JSX.Element => {
                 <DropDownMenu title="Body" options={["Sedan","SUV","Hatchback","Coupe","Pickup"]}/>
                 <FilterButton title="Year"/>
                 <FilterButton title="Price"/>
-                <DropDownMenu title="Make"/>
+                <button className='reset-btn' onClick={handleMakeClick}>Make</button>
                 <button className="reset-btn" onClick={handleReset}>Reset <BiReset/></button>
 
             </section>

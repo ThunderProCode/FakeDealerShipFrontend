@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './CompareView.css';
 import { IoMdAddCircle } from "react-icons/io";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import CarMiniCard from '../../Components/CarMiniCard/CarMiniCard';
 import { getCarById } from '../../Services/carService';
-import { useDrop,useDrag } from 'react-dnd';
+import { useDrop } from 'react-dnd';
 import { ICar } from '../../interfaces/ICar.Interface';
 import CompareCarCard from '../../Components/CompareCarCard/CompareCarCard';
 

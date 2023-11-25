@@ -10,7 +10,7 @@ interface MiniCardProps {
 const CarMiniCard:React.FC<MiniCardProps> = (props):JSX.Element => {
 
     const { Car } = props;
-    const [{isDragging}, drag] = useDrag({
+    const [, drag] = useDrag({
             type: 'CAR',
             item: { id: Car?.id},
             collect: (monitor) => ({
