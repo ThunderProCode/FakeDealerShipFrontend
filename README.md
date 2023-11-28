@@ -4,6 +4,8 @@
 
 I propose to develop a comprehensive website for a car dealership named FakeDealership, integrating both frontend and backend functionalities. The website aims to provide users with an intuitive and efficient platform to search, filter, compare, and purchase cars from the dealership's fleet. The frontend will feature a user-friendly interface with key information about available cars, while the backend will consist of a C# API for managing and updating car inventory.
 
+[Backend Repository](https://github.com/ThunderProCode/FakDealershipBackend)
+
 ## Features
 
 ### Client Side
@@ -26,14 +28,14 @@ I propose to develop a comprehensive website for a car dealership named FakeDeal
 - [X] **Backend Setup:** Initialize the C# API and set up the database schema for car information.
 
 ### Nov 24
-- [ ] **Car Search Functionality:** Implement the search feature to fetch and display car listings based on user queries.
-- [ ] **Car Details Page:** Create a detailed page for each car, showcasing all relevant information.
-- [ ] **HTML Mastery:** Utilize HTML elements such as form, text, number, select, reset, submit, img, table, a, ul/ol/dl, figure, section/article, aside, nav.
+- [X] **Car Search Functionality:** Implement the search feature to fetch and display car listings based on user queries.
+- [X] **Car Details Page:** Create a detailed page for each car, showcasing all relevant information.
+- [X] **HTML Mastery:** Utilize HTML elements such as form, text, number, select, reset, submit, img, table, a, ul/ol/dl, figure, section/article, aside, nav.
 
 ### Dec 1
-- [ ] **Filtering Options:** Integrate filtering options to enhance user experience in finding specific cars.
-- [ ] **Car Comparison Page:** Develop the car comparison page with drag-and-drop functionality.
-- [ ] **CSS Mastery:** Implement appropriate selectors, transitions, hover effects, nth child, layout using flex and/or grid, colors, background colors, text colors, margin/padding, border/corner radius.
+- [X] **Filtering Options:** Integrate filtering options to enhance user experience in finding specific cars.
+- [X] **Car Comparison Page:** Develop the car comparison page with drag-and-drop functionality.
+- [X] **CSS Mastery:** Implement appropriate selectors, transitions, hover effects, nth child, layout using flex and/or grid, colors, background colors, text colors, margin/padding, border/corner radius.
   
 ### Dec 8
 - [ ] **Checkout Process:** Implement the checkout process, ensuring a smooth and secure transaction for users.
