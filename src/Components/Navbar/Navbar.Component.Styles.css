@@ -94,3 +94,38 @@
     font-size: 1.2em;
     color: var(--primary-color);
 }
+
+@media (max-width: 700px) {
+
+    .nav-bar {
+        align-items: center;
+        justify-content: space-between;
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+
+    .nav-logo {
+        margin-left: 0;
+        width: 10em;
+    }
+
+    .nav-links-container {
+        display: none;
+    }
+
+    .menu-btn {
+        margin: 0;
+        background:none;
+        border: none;
+        padding: 0;
+        color: var(--primary-color);
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-btn svg {
+        font-size: 4em;
+    }
+}

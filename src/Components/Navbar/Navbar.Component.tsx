@@ -4,7 +4,7 @@ import Logo from '../../assets/svgs/Logo.svg';
 import './Navbar.Component.Styles.css';
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-
+import { IoMenu } from "react-icons/io5";
 
 const Navbar: React.FC = (): JSX.Element => {
 
@@ -18,6 +18,9 @@ const Navbar: React.FC = (): JSX.Element => {
             <Link to='/' className="nav-logo">
                     <img src={Logo} alt="Page Logo" />
             </Link>
+            <button className="menu-btn">
+                <IoMenu />
+            </button>
             <div className="nav-links-container">
                 <ul className="nav-links">
                     <li><NavLink to='/' className={getClassName} >Home</NavLink></li>
