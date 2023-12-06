@@ -87,3 +87,7 @@
 .search-btn svg {
     margin-left: .5em;
 }
+
+@media (max-width: 700px) {
+
+}
