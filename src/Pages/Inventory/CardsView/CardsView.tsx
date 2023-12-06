@@ -50,8 +50,7 @@ const CardsView:React.FC = ():JSX.Element => {
 
     return(
         <>
-            <FilterBar handleMakeClick={handleMakeClick}
-            />
+            <FilterBar handleMakeClick={handleMakeClick}/>
             <ul className="inventory-cards-container">
             {
                 carsStatus === 'loading' ? <p>Loading....</p>:

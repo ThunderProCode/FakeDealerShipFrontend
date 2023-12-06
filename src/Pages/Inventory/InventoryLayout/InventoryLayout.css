@@ -23,3 +23,17 @@
     border-radius: .1em;
     background-color: var(--primary-color);
 }
+
+@media (max-width: 700px) {
+    .inventory-page {
+        padding-top: 6em;
+        width: 100vw;
+        height: 100vh;
+        flex: none;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
