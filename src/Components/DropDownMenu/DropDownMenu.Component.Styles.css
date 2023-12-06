@@ -33,6 +33,7 @@
     position: absolute;
     background-color: black;
     min-width: 8em;
+    width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }

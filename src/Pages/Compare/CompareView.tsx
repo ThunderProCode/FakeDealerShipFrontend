@@ -8,6 +8,8 @@ import { getCarById } from '../../Services/carService';
 import { useDrop } from 'react-dnd';
 import { ICar } from '../../interfaces/ICar.Interface';
 import CompareCarCard from '../../Components/CompareCarCard/CompareCarCard';
+import DropDownMenu from '../../Components/DropDownMenu/DropDownMenu.Component';
+import CarDetailsCard from '../../Components/CarDetailsCard/CarDetailsCard';
 
 const CompareView: React.FC = (): JSX.Element => {
 
@@ -15,6 +17,10 @@ const CompareView: React.FC = (): JSX.Element => {
     const likedCars = useSelector((state:RootState) => state.likedCars.likedCars);
     const [ droppedCar1, setDroppedCar1] = useState<ICar | null>(null);
     const [ droppedCar2, setDroppedCar2 ] = useState<ICar | null>(null);
+
+    const getCarNames = ():string[] => {
+        return likedCars.map((car) => `${getCarById(cars,car)?.make} ${getCarById(cars,car)?.model}`);
+    }
 
     const resetDroppedCar1 = ():void => {
         setDroppedCar1(null);
@@ -105,6 +111,15 @@ const CompareView: React.FC = (): JSX.Element => {
                         }
                         </div>
                     </div>
+                </section>
+                <section className="compare-mobile">
+                        <h2 className="compare-mobile-title">Compare Cars</h2>
+                        <div className="select-cars-section">
+                            <DropDownMenu title="Select Car 1" options={getCarNames()}/>
+                            <DropDownMenu title="Select Car 2" options={getCarNames()}/>
+                        </div>
+                        <CarDetailsCard/>
+                        <CarDetailsCard/>
                 </section>
             </article>
         </>
