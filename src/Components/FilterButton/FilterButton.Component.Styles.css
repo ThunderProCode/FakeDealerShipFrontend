@@ -1,5 +1,5 @@
 .filter-button {
-    margin-right: 1em;
+        margin-right: 1em;
     height: 100%;
     padding: .6em;
     border-radius: .2em;
@@ -25,4 +25,10 @@
 
 .increasing {
     transform: rotate(180deg);
+}
+
+@media (max-width: 700px) {
+    .filter-button {
+        font-size: .8em;
+    }
 }

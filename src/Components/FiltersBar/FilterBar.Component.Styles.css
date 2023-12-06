@@ -19,8 +19,8 @@
     width: auto;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: flex-start1;
+    align-items:center;
+    justify-content: space-between;
 }
 
 .reset-btn {
@@ -89,5 +89,19 @@
 }
 
 @media (max-width: 700px) {
+    .filter-bar {
+        width: 90%;
+        margin-bottom: 2em;
+        height: auto;
+        flex-direction: column;
+    }
 
+    .filter-buttons {
+        width: 100%;
+    }
+    
+    .search-bar-container {
+        margin-top: 1em;
+        width: 100%;
+    }
 }
