@@ -1,10 +1,8 @@
 import React from "react";
 import './CarCard.Component.Styles.css';
 import { ICar } from "../../interfaces/ICar.Interface";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { addLikedCar, selectLikedCars, removeLikedCar } from "../../features/myGarageSlice";
 import { useNavigate } from "react-router";
+import LikeButton from "../LikeButton/LikeButton";
 
 interface ICarCardProps {
     Car: ICar | undefined;
@@ -14,23 +12,8 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
 
     const { Car } = props;
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const likedCars = useSelector(selectLikedCars);
 
     if(Car) {
-        const liked = likedCars.includes(Car.id);
-        const selectHeart = () => {
-            return liked ? <FaHeart/> : <FaRegHeart/>;
-        }
-    
-        const handleLikeClick = () => {
-            if(liked){
-                dispatch(removeLikedCar(Car.id));
-            } else {
-                dispatch(addLikedCar(Car.id));
-            }
-        }
-
         const handleDetailsClick = () => {
             navigate(`/inventory/car/${Car.id}`);
         }
@@ -44,11 +27,7 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                     <header className="card-header">
                         <section className="card-title-section">
                             <h2 className="card-title">{`${Car.make} ${Car.model}`}</h2>
-                            <button onClick={handleLikeClick} className="card-like-btn">
-                                {
-                                    selectHeart()
-                                }
-                            </button>
+                            <LikeButton car={Car}/>
                         </section>
                         <div className="card-details">
                             <p><span>Year: </span>{`${Car.year}`}</p>

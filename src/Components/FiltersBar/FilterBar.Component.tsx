@@ -5,7 +5,8 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu.Component';
 import FilterButton from '../FilterButton/FilterButton.Component';
 import { useDispatch } from 'react-redux';
 import { switchFilter } from '../../features/filterSlice';
-import { BiReset } from "react-icons/bi";
+import { FaCarAlt } from "react-icons/fa";
+// import { BiReset } from "react-icons/bi";
 
 interface FilterBarProps {
     handleMakeClick: () => void;
@@ -17,9 +18,9 @@ const FilterBar:React.FC<FilterBarProps> = (props):JSX.Element => {
     const [ inputValue, setInputValue ] = useState('');
     const dispatch = useDispatch();
 
-    const handleReset = () => {
-        dispatch(switchFilter('no-filter'))    
-    }
+    // const handleReset = () => {
+    //     dispatch(switchFilter('no-filter'))    
+    // }
 
     const updateInputValue = (event:React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
@@ -39,7 +40,7 @@ const FilterBar:React.FC<FilterBarProps> = (props):JSX.Element => {
         <div className="filter-bar">
             <section className="filter-buttons">
 
-                <DropDownMenu title="Body" options={["Sedan","SUV","Hatchback","Coupe","Pickup"]}/>
+                <DropDownMenu title="Body" options={["Sedan","SUV","Hatchback","Coupe","Pickup"]} filter={true} icon={FaCarAlt}/>
                 <FilterButton title="Year"/>
                 <FilterButton title="Price"/>
                 <button className='reset-btn' onClick={handleMakeClick}>Make</button>

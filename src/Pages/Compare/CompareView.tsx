@@ -10,6 +10,7 @@ import { ICar } from '../../interfaces/ICar.Interface';
 import CompareCarCard from '../../Components/CompareCarCard/CompareCarCard';
 import DropDownMenu from '../../Components/DropDownMenu/DropDownMenu.Component';
 import CarDetailsCard from '../../Components/CarDetailsCard/CarDetailsCard';
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const CompareView: React.FC = (): JSX.Element => {
 
@@ -17,10 +18,6 @@ const CompareView: React.FC = (): JSX.Element => {
     const likedCars = useSelector((state:RootState) => state.likedCars.likedCars);
     const [ droppedCar1, setDroppedCar1] = useState<ICar | null>(null);
     const [ droppedCar2, setDroppedCar2 ] = useState<ICar | null>(null);
-
-    const getCarNames = ():string[] => {
-        return likedCars.map((car) => `${getCarById(cars,car)?.make} ${getCarById(cars,car)?.model}`);
-    }
 
     const resetDroppedCar1 = ():void => {
         setDroppedCar1(null);
@@ -65,6 +62,15 @@ const CompareView: React.FC = (): JSX.Element => {
         }
     }
 
+    const getInstructionsClassName = ():string => {
+        if(droppedCar1 && droppedCar2){
+            return "compare-view-instructions hidden";
+        }else {
+            return "compare-view-instructions";
+        }
+    }
+
+
     const getContent2 = () => {
         if(droppedCar2){
             return(
@@ -79,6 +85,30 @@ const CompareView: React.FC = (): JSX.Element => {
                     <h2>Drop a Car Here</h2>
                 </>
             )
+        }
+    }
+
+    const selectCar1 = (car:ICar) => {
+        setDroppedCar1(car);
+    }
+
+    const selectCar2 = (car:ICar) => {
+        setDroppedCar2(car);
+    }
+    
+    const renderCarDetailsCards = () => {
+        if(droppedCar1 && droppedCar2){
+            return(
+                <>
+                    <CarDetailsCard car={droppedCar1} />
+                    <CarDetailsCard car={droppedCar2} />
+                </>
+            );
+        } else {
+            return(
+                <>
+                </>
+            );
         }
     }
 
@@ -115,11 +145,13 @@ const CompareView: React.FC = (): JSX.Element => {
                 <section className="compare-mobile">
                         <h2 className="compare-mobile-title">Compare Cars</h2>
                         <div className="select-cars-section">
-                            <DropDownMenu title="Select Car 1" options={getCarNames()}/>
-                            <DropDownMenu title="Select Car 2" options={getCarNames()}/>
+                            <DropDownMenu title="Select Car 1" filter={false} icon={IoMdArrowDropdown} action={selectCar1}/>
+                            <DropDownMenu title="Select Car 2" filter={false} icon={IoMdArrowDropdown} action={selectCar2}/>
                         </div>
-                        <CarDetailsCard/>
-                        <CarDetailsCard/>
+                        <h2 className={getInstructionsClassName()}>Select two cars to compare</h2>
+                        <div className="car-details-cards-container">
+                            {renderCarDetailsCards()}
+                        </div>
                 </section>
             </article>
         </>
