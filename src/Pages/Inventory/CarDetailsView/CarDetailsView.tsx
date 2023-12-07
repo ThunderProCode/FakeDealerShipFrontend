@@ -7,6 +7,7 @@ import { getCarById } from "../../../Services/carService";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { removeLikedCar, addLikedCar } from "../../../features/myGarageSlice";
+import CarDetailsCard from "../../../Components/CarDetailsCard/CarDetailsCard";
 
 const CarDetailsView:React.FC = ():JSX.Element => {
 
@@ -38,55 +39,60 @@ const CarDetailsView:React.FC = ():JSX.Element => {
             }
         }
         return(
-            <article className="car-view-container">
-               <section className="car-images">
-                    <div className="left-side">
-                        <div className="displayed-image">
-                            <img src={displayedImage} alt="Car" />
-                        </div>
-                        <div className="buttons-container">
-                            <button className="like-btn" onClick={handleLikeClick}>{ selectHeart() }</button>
-                            <button className="order-btn">Order This Car</button>
-                        </div>
-                    </div>
-                    <div className="right-side">
-                        <div className="available-images">
-                            {
-                                car.images.map((image) => <div className={`image-to-select ${displayedImage === image ? 'image-selected': ''}`} key={image} onClick={() => handleImageClick(image)}> <img src={image} alt="Car"/> </div>)
-                            }
-                        </div>
-                    </div>
-               </section>
-               <section className="car-info">
-                    <div className="info-section info-details">
-                        <h2>Details</h2>
-                        <ul>
-                            <li><span>Make: </span>{ `${car.make}` }</li>
-                            <li><span>Mode: </span>{ `${car.model}` }</li>
-                            <li><span>Year: </span>{ `${car.year}` }</li>
-                            <li><span>Color: </span>{ `${car.color}` }</li>
-                            <li><span>Seats: </span>{ `${car.seats}` }</li>
-                            <li><span>Engine: </span>{ `${car.engine}` }</li>
-                            <li><span>Miles: </span>{ `${car.mileage}` }</li>
-                            <li><span>Mpg: </span>{ `${car.mpg}` }</li>
-                            <li><span>VIN: </span>{ `${car.vin}` }</li>
-                            <li><span>Price: </span>{ `${car.price}` }</li>
-                        </ul>
-                    </div>
-                    <div className="info-section info-description">
-                        <h2>Description</h2>
-                        <p>{ `${car.description}` }</p>
-                    </div>
-                    <div className="info-section info-features">
-                        <h2>Features</h2>
-                        <ul>
-                            {
-                                car.features.map((feature) => <li>{ `${feature}` }<FaCheckSquare/></li>)
-                            }
-                        </ul>
-                    </div>
-               </section>
-            </article>
+            <>
+                <div className="car-view-mobile">
+                    <CarDetailsCard car={car}/>
+                </div>
+                <article className="car-view-container">  
+                    <section className="car-images">
+                            <div className="left-side">
+                                <div className="displayed-image">
+                                    <img src={displayedImage} alt="Car" />
+                                </div>
+                                <div className="buttons-container">
+                                    <button className="like-btn" onClick={handleLikeClick}>{ selectHeart() }</button>
+                                    <button className="order-btn">Order This Car</button>
+                                </div>
+                            </div>
+                            <div className="right-side">
+                                <div className="available-images">
+                                    {
+                                        car.images.map((image) => <div className={`image-to-select ${displayedImage === image ? 'image-selected': ''}`} key={image} onClick={() => handleImageClick(image)}> <img src={image} alt="Car"/> </div>)
+                                    }
+                                </div>
+                            </div>
+                    </section>
+                    <section className="car-info">
+                            <div className="info-section info-details">
+                                <h2>Details</h2>
+                                <ul>
+                                    <li><span>Make: </span>{ `${car.make}` }</li>
+                                    <li><span>Mode: </span>{ `${car.model}` }</li>
+                                    <li><span>Year: </span>{ `${car.year}` }</li>
+                                    <li><span>Color: </span>{ `${car.color}` }</li>
+                                    <li><span>Seats: </span>{ `${car.seats}` }</li>
+                                    <li><span>Engine: </span>{ `${car.engine}` }</li>
+                                    <li><span>Miles: </span>{ `${car.mileage}` }</li>
+                                    <li><span>Mpg: </span>{ `${car.mpg}` }</li>
+                                    <li><span>VIN: </span>{ `${car.vin}` }</li>
+                                    <li><span>Price: </span>{ `${car.price}` }</li>
+                                </ul>
+                            </div>
+                            <div className="info-section info-description">
+                                <h2>Description</h2>
+                                <p>{ `${car.description}` }</p>
+                            </div>
+                            <div className="info-section info-features">
+                                <h2>Features</h2>
+                                <ul>
+                                    {
+                                        car.features.map((feature) => <li>{ `${feature}` }<FaCheckSquare/></li>)
+                                    }
+                                </ul>
+                            </div>
+                    </section>
+                </article>
+            </>
         );
     }else {
         return (

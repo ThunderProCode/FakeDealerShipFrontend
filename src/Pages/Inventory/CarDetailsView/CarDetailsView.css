@@ -5,6 +5,9 @@
     padding-top: 2em;
     padding-bottom: 2em;
 }
+.car-view-mobile {
+    display: none;
+}
 
 .car-images {
     width: 100%;
@@ -207,5 +210,17 @@
         width: 28%;
         height: 28%;
     }
-    
+}
+
+
+@media (max-width: 700px) {
+    .car-view-container {
+        display: none;
+    }
+
+    .car-view-mobile {
+        overflow: scroll;
+        width: 90%;
+        height: 100%;
+    }
 }
