@@ -38,10 +38,10 @@ I propose to develop a comprehensive website for a car dealership named FakeDeal
 - [X] **CSS Mastery:** Implement appropriate selectors, transitions, hover effects, nth child, layout using flex and/or grid, colors, background colors, text colors, margin/padding, border/corner radius.
   
 ### Dec 8
-- [ ] **Checkout Process:** Implement the checkout process, ensuring a smooth and secure transaction for users.
-- [ ] **Admin Portal:** Create the CMS for administrators to manage the car inventory.
-- [ ] **Interactivity:** Implement map and filter functions, manipulate the DOM, add/remove event listeners, use code across multiple files (export/import/modules), ensure structured code organization (e.g., ui, domain, svc), use async await/promises, handle network requests/call API.
+- [X] **Checkout Process:** Implement the checkout process, ensuring a smooth and secure transaction for users.
+- [X] **Interactivity:** Implement map and filter functions, manipulate the DOM, add/remove event listeners, use code across multiple files (export/import/modules), ensure structured code organization (e.g., ui, domain, svc), use async await/promises, handle network requests/call API.
   
 ### Dec 8 - 13 (Buffer Days)
-- [ ] **Testing and Debugging:** Conduct thorough testing to identify and fix any bugs or issues.
+- [ ] **Admin Portal:** Create the CMS for administrators to manage the car inventory.
+- [X] **Testing and Debugging:** Conduct thorough testing to identify and fix any bugs or issues.
 - [ ] **Documentation:** Update the README.md file with comprehensive documentation about the project.
