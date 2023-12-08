@@ -5,7 +5,6 @@ import { ICar } from '../interfaces/ICar.Interface';
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const fetchCars = createAsyncThunk('cars/fetchCars',async () => {
-    console.log('Fetching Cars');
     const response = await axios.get(`${BASE_URL}/Cars`);
     return response.data as ICar[];
 });

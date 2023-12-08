@@ -41,27 +41,27 @@ const CarDetailsCard:React.FC<CarDetailsCardProps> = (props):JSX.Element => {
                 <h3>Details</h3>
                 <article className="details-card-details">
                     <ul className="details-card-left">
-                        <li><span>Make: </span>{`${props.car.make}`}</li>
-                        <li><span>Model: </span>{`${props.car.model}`}</li>
-                        <li><span>Year: </span>{`${props.car.year}`}</li>
-                        <li><span>Color: </span>{`${props.car.color}`}</li>
-                        <li><span>Seats: </span>{`${props.car.seats}`}</li>
-                        <li className="details-card-price"><span>Price: </span>{`$${props.car.price}`}</li>
+                        <li key={props.car.make}><span>Make: </span>{`${props.car.make}`}</li>
+                        <li key={props.car.model}><span>Model: </span>{`${props.car.model}`}</li>
+                        <li key={props.car.year}><span>Year: </span>{`${props.car.year}`}</li>
+                        <li key={props.car.color}><span>Color: </span>{`${props.car.color}`}</li>
+                        <li key={props.car.seats}><span>Seats: </span>{`${props.car.seats}`}</li>
+                        <li key={props.car.price} className="details-card-price"><span>Price: </span>{`$${props.car.price}`}</li>
                     </ul>
                     <ul className="details-card-right">
-                        <li><span>Engine: </span>{`${props.car.engine}`}</li>
-                        <li><span>Miles: </span>{`${props.car.mileage}`}</li>
-                        <li><span>Mpg: </span>{`${props.car.mpg}`}</li>
-                        <li><span>VIN: </span>{`${props.car.vin}`}</li>
+                        <li key={props.car.engine}><span>Engine: </span>{`${props.car.engine}`}</li>
+                        <li key={props.car.mileage}><span>Miles: </span>{`${props.car.mileage}`}</li>
+                        <li key={props.car.mpg}><span>Mpg: </span>{`${props.car.mpg}`}</li>
+                        <li key={props.car.vin}><span>VIN: </span>{`${props.car.vin}`}</li>
                     </ul>
                 </article>
 
                 <ul className="details-card-features">
                     <h3>Features</h3>
                     {
-                        props.car.features.map((feature) => {
+                        props.car.features.map((feature,index) => {
                             return(
-                                <li>{`${feature}`}<FaCheckSquare/></li>
+                                <li key={feature}>{`${feature}`}<FaCheckSquare/></li>
                             );
                         })
                     }

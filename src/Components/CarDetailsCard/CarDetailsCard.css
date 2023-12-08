@@ -1,6 +1,6 @@
 .car-details-card {
     width: 100%;
-    height: auto;
+    min-height: 100%;
     margin-top: 1em;
     color: var(--text-color);
     margin-bottom: 1em;
@@ -115,4 +115,7 @@
     font-size: 1.2em;
     font-weight: bold;
     padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

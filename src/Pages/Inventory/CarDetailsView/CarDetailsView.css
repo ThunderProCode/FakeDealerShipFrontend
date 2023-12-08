@@ -5,6 +5,7 @@
     padding-top: 2em;
     padding-bottom: 2em;
 }
+
 .car-view-mobile {
     display: none;
 }
@@ -219,6 +220,7 @@
     }
 
     .car-view-mobile {
+        display: flex;
         overflow: scroll;
         width: 90%;
         height: 100%;

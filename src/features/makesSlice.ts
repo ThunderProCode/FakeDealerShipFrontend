@@ -4,7 +4,6 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const fetchMakes = createAsyncThunk('makes/fetchMakes', async () => {
-    console.log('Fetching Makes');
     const response = await axios.get(`${BASE_URL}/Cars/makes`);
     return response.data as string[];
 })
