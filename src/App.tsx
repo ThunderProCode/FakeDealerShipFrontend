@@ -45,7 +45,7 @@ const App:React.FC = (): JSX.Element => {
         children: []
       },
       {
-        path: 'order/:CarId',
+        path: 'order/:carId',
         element: <OrderCarView/>,
         children: []
       }
