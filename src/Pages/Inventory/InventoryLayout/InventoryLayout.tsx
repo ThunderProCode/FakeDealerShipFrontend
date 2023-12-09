@@ -6,7 +6,7 @@ import Navbar from '../../../Shared/Navbar/Navbar.Component';
 const InventoryLayout:React.FC = ():JSX.Element => {
     return(
         <>
-            <Navbar />
+            <Navbar admin={false} user={true}/>
             <div className="inventory-page">
                 <Outlet/>
             </div>

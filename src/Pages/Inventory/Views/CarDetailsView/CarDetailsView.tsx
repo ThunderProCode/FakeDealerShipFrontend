@@ -3,11 +3,11 @@ import './CarDetailsView.css';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router";
-import { getCarById } from "../../../Services/carService";
+import { getCarById } from "../../../../Services/carService";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store";
-import { removeLikedCar, addLikedCar } from "../../../features/myGarageSlice";
-import CarDetailsCard from "../Components/CarDetailsCard/CarDetailsCard";
+import { RootState } from "../../../../store";
+import { removeLikedCar, addLikedCar } from "../../../../features/myGarageSlice";
+import CarDetailsCard from "../../Components/CarDetailsCard/CarDetailsCard";
 
 const CarDetailsView:React.FC = ():JSX.Element => {
 

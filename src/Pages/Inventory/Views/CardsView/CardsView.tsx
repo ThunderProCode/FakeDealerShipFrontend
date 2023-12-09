@@ -1,13 +1,13 @@
 import React, { useEffect,useState } from 'react';
 import './CardsView.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../../store';
-import { fetchCars } from '../../../features/carsSlice';
-import { filterCarsBy } from '../../../Services/carService';
+import { AppDispatch, RootState } from '../../../../store';
+import { fetchCars } from '../../../../features/carsSlice';
+import { filterCarsBy } from '../../../../Services/carService';
 
-import CarCard from '../Components/CarCard/CarCard.Component';
-import FilterBar from '../Components/FiltersBar/FilterBar.Component';
-import MakePanel from '../Components/MakePanel/MakePanel';
+import CarCard from '../../Components/CarCard/CarCard.Component';
+import FilterBar from '../../Components/FiltersBar/FilterBar.Component';
+import MakePanel from '../../Components/MakePanel/MakePanel';
 
 const CardsView:React.FC = ():JSX.Element => {
 

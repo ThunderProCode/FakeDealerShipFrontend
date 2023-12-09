@@ -10,11 +10,13 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import HomeView from './Pages/Home/HomeView';
 import CompareView from './Pages/Compare/CompareView';
 import MyGarageView from './Pages/MyGarage/MyGarageView';
-import CarDetailsView from './Pages/Inventory/CarDetailsView/CarDetailsView';
+import CarDetailsView from './Pages/Inventory/Views/CarDetailsView/CarDetailsView';
 import InventoryLayout from './Pages/Inventory/InventoryLayout/InventoryLayout';
-import CardsView from './Pages/Inventory/CardsView/CardsView';
+import CardsView from './Pages/Inventory/Views/CardsView/CardsView';
 import MainLayout from './Pages/Layout/MainLayout';
-import OrderCarView from './Pages/Inventory/OrderCar/OrderCarView';
+import OrderCarView from './Pages/Inventory/Views/OrderCar/OrderCarView';
+import LoginView from './Pages/Admin/Views/LoginView/LoginView';
+import AdminLayout from './Pages/Admin/AdminLayout/AdminLayout';
 
 
 const App:React.FC = (): JSX.Element => {
@@ -26,7 +28,8 @@ const App:React.FC = (): JSX.Element => {
       { path: '/', element: <HomeView /> },
       { path: 'inventory', element: <Navigate to='inventory/cars'/> },
       { path: 'myGarage', element: <MyGarageView/> },
-      { path: 'compare', element: <CompareView /> }
+      { path: 'compare', element: <CompareView /> },
+      { path: 'admin', element: <Navigate to='login' /> }
     ]
   };
 
@@ -58,7 +61,19 @@ const App:React.FC = (): JSX.Element => {
     children: []
   };
 
-  const routing = useRoutes([mainRoutes,inventoryRoute,myGarageRoute]);
+  const adminRoute = {
+    path: 'admin',
+    element: <AdminLayout/>,
+    children: [
+      {
+        path: 'login',
+        element: <LoginView/>,
+        children: []
+      }
+    ]
+  }
+
+  const routing = useRoutes([mainRoutes,inventoryRoute,myGarageRoute, adminRoute]);
   return (
     <DndProvider backend={HTML5Backend}>
       <Provider store={store}>
