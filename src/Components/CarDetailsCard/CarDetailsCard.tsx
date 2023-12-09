@@ -4,6 +4,7 @@ import { ICar } from '../../interfaces/ICar.Interface';
 import LikeButton from '../LikeButton/LikeButton';
 import { FaCheckSquare } from "react-icons/fa";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import { useNavigate } from 'react-router';
 
 interface CarDetailsCardProps {
     car:ICar;
@@ -12,6 +13,7 @@ interface CarDetailsCardProps {
 const CarDetailsCard:React.FC<CarDetailsCardProps> = (props):JSX.Element => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const navigate = useNavigate();
 
     const nextImage = () => {
       setCurrentImageIndex((prevIndex) =>
@@ -25,6 +27,10 @@ const CarDetailsCard:React.FC<CarDetailsCardProps> = (props):JSX.Element => {
       );
     };
 
+    const handleOrderClick = ():void => {
+        console.log('Clicked')
+        navigate(`/inventory/order/${props.car.id}`);
+    }
     
     return(
         <div className="car-details-card">
@@ -67,7 +73,7 @@ const CarDetailsCard:React.FC<CarDetailsCardProps> = (props):JSX.Element => {
                     }
                 </ul>
             </section>
-            <button className="details-card-button">Order This Car</button>
+            <button className="details-card-button" onClick={() => handleOrderClick}>Order This Car</button>
         </div>
     );
 }

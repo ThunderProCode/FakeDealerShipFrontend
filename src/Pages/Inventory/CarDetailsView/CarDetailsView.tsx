@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './CarDetailsView.css';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { getCarById } from "../../../Services/carService";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
@@ -18,10 +18,15 @@ const CarDetailsView:React.FC = ():JSX.Element => {
     const car = getCarById(cars,parsedCarId);
     const [ displayedImage, setDisplayedImage ] = useState(car?.images[0]);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     if(car){
 
         const liked = likedCars.includes(car.id);
+
+        const handleOrderClick = () => {
+            navigate(`/inventory/order/${car.id}`);
+        }
         
         const selectHeart = () => {
             return liked ? <FaHeart/> : <FaRegHeart/>;
@@ -51,7 +56,7 @@ const CarDetailsView:React.FC = ():JSX.Element => {
                                 </div>
                                 <div className="buttons-container">
                                     <button className="like-btn" onClick={handleLikeClick}>{ selectHeart() }</button>
-                                    <button className="order-btn">Order This Car</button>
+                                    <button className="order-btn" onClick={handleOrderClick}>Order This Car</button>
                                 </div>
                             </div>
                             <div className="right-side">

@@ -1,6 +1,7 @@
 import React from 'react';
 import './CompareCarCard.css';
 import { ICar } from '../../interfaces/ICar.Interface';
+import { useNavigate } from 'react-router';
 
 interface CompareCarCardProps {
     Car:ICar;
@@ -10,6 +11,11 @@ interface CompareCarCardProps {
 const CompareCarCard:React.FC<CompareCarCardProps> = (props):JSX.Element => {
 
     const { Car, resetFunction } = props;
+    const navigate = useNavigate();
+
+    const handleOrderClick = ():void => {
+        navigate(`/inventory/order/${Car.id}`);
+    }
 
     return(
         <div className="compare-car-card">
@@ -31,7 +37,7 @@ const CompareCarCard:React.FC<CompareCarCardProps> = (props):JSX.Element => {
                     <p><span>Price: </span>{ `${Car.price}` }</p>
                 </div>
                 <div className="compare-buttons">
-                    <button className="compare-btn">Order this car</button>
+                    <button className="compare-btn" onClick={handleOrderClick}>Order this car</button>
                     <button className="compare-btn" onClick={() => resetFunction() }>Compare Other</button>
                 </div>
             </section>

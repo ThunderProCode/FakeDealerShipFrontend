@@ -17,6 +17,10 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
         const handleDetailsClick = () => {
             navigate(`/inventory/car/${Car.id}`);
         }
+
+        const handleOrderClick = () => {
+            navigate(`/inventory/order/${Car.id}`);
+        }
     
         return(
             <article className="car-card">
@@ -46,7 +50,7 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                         <button type="button" className="card-btn" onClick={handleDetailsClick}>
                             Details
                         </button>
-                        <button type="button" className="card-btn">
+                        <button type="button" className="card-btn" onClick={handleOrderClick}>
                             Order
                         </button>
                     </div>

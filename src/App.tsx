@@ -14,6 +14,7 @@ import CarDetailsView from './Pages/Inventory/CarDetailsView/CarDetailsView';
 import InventoryLayout from './Pages/Inventory/InventoryLayout/InventoryLayout';
 import CardsView from './Pages/Inventory/CardsView/CardsView';
 import MainLayout from './Pages/Layout/MainLayout';
+import OrderCarView from './Pages/Inventory/OrderCar/OrderCarView';
 
 
 const App:React.FC = (): JSX.Element => {
@@ -41,6 +42,11 @@ const App:React.FC = (): JSX.Element => {
       {
         path: 'car/:carId',
         element: <CarDetailsView/>,
+        children: []
+      },
+      {
+        path: 'order/:CarId',
+        element: <OrderCarView/>,
         children: []
       }
     ]
