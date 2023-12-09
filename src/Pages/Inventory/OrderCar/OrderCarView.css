@@ -241,3 +241,29 @@
         width: 100%;
     }
 }
+
+
+@media (min-width: 700px) {
+    .order-form {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .order-form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .order-form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .order-form {
+        width: 60%;
+    }
+}
+
