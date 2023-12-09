@@ -1,5 +1,6 @@
 import React from "react";
 import "./LoginView.css";
+import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
 
 const LoginView:React.FC = ():JSX.Element => {
     return(
@@ -18,8 +19,8 @@ const LoginView:React.FC = ():JSX.Element => {
                         <input name="login-password-input" type="password" />
                     </div>
                     <div className="login-buttons">
-                        <button>Go Back</button>
-                        <button>Login</button>
+                        <PrimaryButton width="49%" height="100%" label="Go Back" onClick={() => {}}/>
+                        <PrimaryButton width="49%" height="100%" label="Login" onClick={() => {}}/>
                     </div>
                 </article>
             </section>

@@ -7,7 +7,9 @@ import { getCarById } from "../../../../Services/carService";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { removeLikedCar, addLikedCar } from "../../../../features/myGarageSlice";
-import CarDetailsCard from "../../Components/CarDetailsCard/CarDetailsCard";
+import CarDetailsCard from "../../../../Shared/CarDetailsCard/CarDetailsCard";
+import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
+import LikeButton from "../../../../Shared/LikeButton/LikeButton";
 
 const CarDetailsView:React.FC = ():JSX.Element => {
 
@@ -17,7 +19,6 @@ const CarDetailsView:React.FC = ():JSX.Element => {
     const parsedCarId = carId? parseInt(carId,10) : undefined;
     const car = getCarById(cars,parsedCarId);
     const [ displayedImage, setDisplayedImage ] = useState(car?.images[0]);
-    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     if(car){
@@ -36,13 +37,6 @@ const CarDetailsView:React.FC = ():JSX.Element => {
             setDisplayedImage(image);
         }
         
-        const handleLikeClick = () => {
-            if(liked){
-                dispatch(removeLikedCar(car.id));
-            } else {
-                dispatch(addLikedCar(car.id))
-            }
-        }
         return(
             <>
                 <div className="car-view-mobile">
@@ -55,8 +49,8 @@ const CarDetailsView:React.FC = ():JSX.Element => {
                                     <img src={displayedImage} alt="Car" />
                                 </div>
                                 <div className="buttons-container">
-                                    <button className="like-btn" onClick={handleLikeClick}>{ selectHeart() }</button>
-                                    <button className="order-btn" onClick={handleOrderClick}>Order This Car</button>
+                                    <LikeButton width="8%" height="100%" fontSize="1em" car={car}/>
+                                    <PrimaryButton width="80%" height="" fontSize="1.2em" label="Order This Car" onClick={handleOrderClick}/>
                                 </div>
                             </div>
                             <div className="right-side">
