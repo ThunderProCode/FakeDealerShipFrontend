@@ -1,8 +1,8 @@
 import React from "react";
 import './CarCard.Component.Styles.css';
-import { ICar } from "../../interfaces/ICar.Interface";
+import { ICar } from "../../../../interfaces/ICar.Interface";
 import { useNavigate } from "react-router";
-import LikeButton from "../LikeButton/LikeButton";
+import LikeButton from "../../../../Shared/LikeButton/LikeButton";
 
 interface ICarCardProps {
     Car: ICar | undefined;

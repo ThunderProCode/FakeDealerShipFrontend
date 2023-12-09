@@ -1,10 +1,10 @@
 import React,{ useEffect, useState } from 'react';
 import './FilterBar.Component.Styles.css';
 import { FaSearch } from "react-icons/fa";
-import DropDownMenu from '../DropDownMenu/DropDownMenu.Component';
+import DropDownMenu from '../../../../Shared/DropDownMenu/DropDownMenu.Component';
 import FilterButton from '../FilterButton/FilterButton.Component';
 import { useDispatch } from 'react-redux';
-import { switchFilter } from '../../features/filterSlice';
+import { switchFilter } from '../../../../features/filterSlice';
 import { FaCarAlt } from "react-icons/fa";
 // import { BiReset } from "react-icons/bi";
 

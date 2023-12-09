@@ -1,10 +1,10 @@
 import React,{ useEffect } from 'react';
 import './MakePanel.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../store';
-import { fetchMakes } from '../../features/makesSlice';
+import { AppDispatch, RootState } from '../../../../store';
+import { fetchMakes } from '../../../../features/makesSlice';
 import { IoMdClose } from "react-icons/io";
-import { switchFilter } from '../../features/filterSlice';
+import { switchFilter } from '../../../../features/filterSlice';
 
 interface MakePanelProps {
     onClose: () => void

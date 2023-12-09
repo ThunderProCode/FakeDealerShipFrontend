@@ -1,6 +1,6 @@
 import React from 'react';
 import './CarMiniCard.css';
-import { ICar } from '../../interfaces/ICar.Interface';
+import { ICar } from '../../../../interfaces/ICar.Interface';
 import { useDrag } from 'react-dnd/dist/hooks';
 
 interface MiniCardProps {

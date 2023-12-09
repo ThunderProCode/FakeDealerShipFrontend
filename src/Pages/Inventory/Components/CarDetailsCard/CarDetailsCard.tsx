@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import './CarDetailsCard.css';
-import { ICar } from '../../interfaces/ICar.Interface';
-import LikeButton from '../LikeButton/LikeButton';
+import { ICar } from '../../../../interfaces/ICar.Interface';
+import LikeButton from '../../../../Shared/LikeButton/LikeButton';
 import { FaCheckSquare } from "react-icons/fa";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { useNavigate } from 'react-router';

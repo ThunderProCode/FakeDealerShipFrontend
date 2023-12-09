@@ -1,6 +1,6 @@
 import React from 'react';
 import './CompareCarCard.css';
-import { ICar } from '../../interfaces/ICar.Interface';
+import { ICar } from '../../../../interfaces/ICar.Interface';
 import { useNavigate } from 'react-router';
 
 interface CompareCarCardProps {

@@ -2,7 +2,7 @@ import React from  'react';
 import './MyGarageView.css';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import CarCard from '../../Components/CarCard/CarCard.Component';
+import CarCard from '../Inventory/Components/CarCard/CarCard.Component';
 import { getCarById } from '../../Services/carService';
 
 const MyGarageView: React.FC = (): JSX.Element => {

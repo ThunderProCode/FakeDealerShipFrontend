@@ -7,7 +7,7 @@ import { getCarById } from "../../../Services/carService";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { removeLikedCar, addLikedCar } from "../../../features/myGarageSlice";
-import CarDetailsCard from "../../../Components/CarDetailsCard/CarDetailsCard";
+import CarDetailsCard from "../Components/CarDetailsCard/CarDetailsCard";
 
 const CarDetailsView:React.FC = ():JSX.Element => {
 

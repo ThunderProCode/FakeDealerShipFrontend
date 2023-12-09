@@ -1,6 +1,6 @@
 import React from 'react';
 import './MainLayout.css';
-import Navbar from '../../Components/Navbar/Navbar.Component';
+import Navbar from '../../Shared/Navbar/Navbar.Component';
 import { Outlet } from 'react-router';
 
 const MainLayout:React.FC = ():JSX.Element => {
