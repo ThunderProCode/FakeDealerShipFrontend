@@ -4,7 +4,7 @@
     height: 90%;
     color: var(--text-color);
     border-radius: .5em;
-    overflow: hidden;
+    
     background-color: var(--secondary-color);
 }
 
@@ -19,6 +19,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
 }
 
 .form-content {
@@ -186,3 +188,82 @@
     padding: .2em;
     font-size: 1em;
 }
+
+@media (max-width: 700px) {
+
+    .order-form {
+        margin-top: 0;
+        height: auto;
+        overflow: scroll;
+
+    }
+
+    .form-content {
+        height: auto;
+        padding: 1em;
+    }
+
+    .form-title {
+        height: 6%;
+    }
+    
+    .form-user-info {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .user-info-left {
+        width: 100%;
+    }
+
+    .user-info-right {
+        width: 100%;
+    }
+
+    .form-user-info input {
+        width: 100%;
+    }
+
+    .form-input-container .drop-btn {
+        width: 100%;
+    }
+
+    .form-order-details {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-car-details {
+        width: 100%;
+    }
+
+    .form-checkout-details {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .order-form {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .order-form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .order-form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .order-form {
+        width: 60%;
+    }
+}
+
