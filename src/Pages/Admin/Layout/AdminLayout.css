@@ -7,3 +7,33 @@
     align-items: center;
     justify-content: center;
 }
+
+.admin-page-mobile {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    .admin-page {
+        display: none;
+    }
+
+    .admin-page-mobile {
+        width: 100%;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-color);
+    }
+
+    .admin-page-mobile svg {
+        font-size: 10em;
+        margin-bottom: .2em;
+    }
+
+    .admin-page-mobile h2 {
+        text-align: center;
+    }
+}

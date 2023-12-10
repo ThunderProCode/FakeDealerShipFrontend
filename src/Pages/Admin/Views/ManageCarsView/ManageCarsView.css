@@ -54,3 +54,7 @@
 .right-column button {
     margin-left: 1em;
 }
+
+@media (min-width: 700px) {
+    
+}

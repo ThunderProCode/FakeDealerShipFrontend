@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
         if(admin){
             return(
                 <>
-                    <PrimaryButton width="20%" padding=".5em" label="Logout" btnIcon={<><MdLogout/></>}/>
+                    <PrimaryButton width="100%" padding=".5em" label="Logout" btnIcon={<><MdLogout/></>}/>
                 </>
             );
         } else {

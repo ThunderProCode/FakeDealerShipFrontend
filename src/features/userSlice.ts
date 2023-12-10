@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ILoginData } from "../interfaces/ILoginData.interface";
-import { IUserData } from "../interfaces/IUserData";
 
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
@@ -31,7 +30,6 @@ export const userLogin = createAsyncThunk('auth/login',async (loginData:ILoginDa
         }
 
         const { data } = await axios.post(`${BASE_URL}/Authenticate/login`, { username,password }, config);
-        console.log(data);
         localStorage.setItem('userData', JSON.stringify(data));
         return data;
 
