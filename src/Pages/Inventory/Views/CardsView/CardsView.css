@@ -8,6 +8,22 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-evenly;
+    overflow: scroll;
+}
+
+
+.inventory-cards-container::-webkit-scrollbar {
+    width: .5em;
+    height: 100%;
+}
+
+.inventory-cards-container::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
+
+.inventory-cards-container::-webkit-scrollbar-thumb {
+    border-radius: .1em;
+    background-color: var(--primary-color);
 }
 
 p {

@@ -90,6 +90,7 @@
 
 @media (max-width: 700px) {
     .filter-bar {
+        margin-top: 0;
         width: 90%;
         margin-bottom: 2em;
         height: auto;
