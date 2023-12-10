@@ -18,6 +18,7 @@ import OrderCarView from './Pages/Inventory/Views/OrderCar/OrderCarView';
 import LoginView from './Pages/Admin/Views/LoginView/LoginView';
 import AdminLayout from './Pages/Admin/Layout/AdminLayout';
 import ManageCarsView from './Pages/Admin/Views/ManageCarsView/ManageCarsView';
+import ManageOrdersView from './Pages/Admin/Views/ManageOrdersView/ManageOrdersView';
 
 
 const App:React.FC = (): JSX.Element => {
@@ -76,6 +77,11 @@ const App:React.FC = (): JSX.Element => {
       {
         path: 'inventory',
         element: <ManageCarsView userData={userData} />,
+        children: [],
+      },
+      {
+        path: 'orders',
+        element: <ManageOrdersView userData={userData} />,
         children: [],
       }
     ]

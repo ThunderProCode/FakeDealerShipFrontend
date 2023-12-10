@@ -1,5 +1,4 @@
 .primary-button-component {
-    background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
     border-radius: .2em;
@@ -14,6 +13,6 @@
     justify-content: center;
 }
 
-.primary-button-component:hover {
-    background-color: #3e0000;
+.primary-button-component svg {
+    margin-left: .5em;
 }

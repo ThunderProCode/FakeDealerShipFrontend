@@ -33,8 +33,8 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
         if(admin){
             return(
                 <>
-                    <li><NavLink to='/inventory' className={getClassName}>Manage Inventory</NavLink></li>
-                    <li><NavLink to='/orders' className={getClassName}>Manage Orders</NavLink></li>
+                    <li><NavLink to='inventory' className={getClassName}>Manage Inventory</NavLink></li>
+                    <li><NavLink to='orders' className={getClassName}>Manage Orders</NavLink></li>
                 </>
             );
         }else if (user){
