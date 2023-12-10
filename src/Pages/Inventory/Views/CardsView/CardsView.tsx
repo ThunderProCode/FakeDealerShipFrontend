@@ -50,14 +50,17 @@ const CardsView:React.FC = ():JSX.Element => {
 
     return(
         <>
-            <FilterBar handleMakeClick={handleMakeClick}/>
-            <ul className="inventory-cards-container">
-            {
-                carsStatus === 'loading' ? <p>Loading....</p>:
-                result()
-            }
-            </ul>
-            { showMakePanel && <MakePanel onClose={handleCloseMakePanel}/> }
+            <div className="cards-view-wrapper">
+                <FilterBar handleMakeClick={handleMakeClick}/>
+                <ul className="inventory-cards-container">
+                {
+                    carsStatus === 'loading' ? <p>Loading....</p>:
+                    result()
+                }
+                </ul>
+                { showMakePanel && <MakePanel onClose={handleCloseMakePanel}/> }
+            </div>
+
         </>
     );
 }

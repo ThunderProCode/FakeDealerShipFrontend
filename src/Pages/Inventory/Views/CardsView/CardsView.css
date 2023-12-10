@@ -1,3 +1,11 @@
+.cards-view-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .inventory-cards-container {
     margin: 0;
     width: 100%;
@@ -10,7 +18,6 @@
     justify-content: space-evenly;
     overflow: scroll;
 }
-
 
 .inventory-cards-container::-webkit-scrollbar {
     width: .5em;
@@ -31,18 +38,15 @@ p {
 }
 
 @media (max-width: 700px) {
-
-
     .inventory-cards-container {
+        margin: 0; 
         width: 100%;
-        height: 80%;
-
-        margin: 0;
+        min-height: 100%;
 
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        overflow: visible;
+        overflow:visible;
     }
 }
