@@ -14,7 +14,10 @@
 
 .nav-bar-header {
     height: 100%;
-    width: 16em;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-logo {
@@ -33,7 +36,7 @@
 .nav-links-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 75%;
 }
 
 .nav-links {
@@ -43,7 +46,7 @@
     margin-left: 2em;
 
     height: 100%;
-    width: 100%;
+    width: 80%;
 
     display: flex;
     align-items: center;
@@ -75,11 +78,11 @@
     margin: 0;
     list-style: none;
     height: 100%;
-    width: 100%;
+    width: 20%;
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     margin-right: 1.5em;
 }
 
@@ -240,15 +243,21 @@
         font-size: 4em;
     }
 }
-/* 
-@media (min-width: 701px) {
+
+@media (min-width: 900px) {
+    .nav-bar-header {
+        width: 15%;
+    }
+
+    .nav-links-container {
+        width: 85%;
+    }
 
     .nav-links {
-        justify-content: flex-end;
-        margin-right: 1.5em;
+        width: 85%;
     }
 
-    .nav-info-link {
-        display: none;
-    }
-} */
+    .nav-info-links {
+        width: 15%;
+    }   
+}

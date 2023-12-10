@@ -86,23 +86,3 @@
     align-items: flex-end;
     justify-content: space-between;
 }
-
-.compare-buttons button {
-    width: 48%;
-    height: 30%;
-    border: none;
-    border-radius: .2em;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    font-size: 1em;
-    font-weight: bold;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.5s ease 0s;
-}
-
-.compare-buttons button:hover {
-    background-color: var(--third-color);
-}

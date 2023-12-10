@@ -6,7 +6,7 @@ import { Outlet } from 'react-router';
 const MainLayout:React.FC = ():JSX.Element => {
     return(
         <>
-            <Navbar/>
+            <Navbar admin={false} user={true}/>
             <Outlet />
         </>
     );

@@ -68,3 +68,16 @@
 .makes-panel li:hover {
     background-color: var(--primary-color);
 }
+
+@media (max-width: 700px) {
+    .makes-panel {
+        width: 60%;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .makes-panel {
+        width: 40%;
+    }
+}

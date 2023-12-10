@@ -69,7 +69,10 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = (props):JSX.Element => {
 
     return(
         <div className="dropdown">
-            <button className="drop-btn">{`${dropDownTitle}`}< props.icon /></button>
+            <button className="drop-btn">
+                {`${dropDownTitle}`}
+                < props.icon />
+            </button>
             <div className="dropdown-content">
                 { renderOptions() }
             </div>

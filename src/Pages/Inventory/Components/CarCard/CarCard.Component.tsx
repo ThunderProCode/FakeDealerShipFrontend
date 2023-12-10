@@ -3,6 +3,7 @@ import './CarCard.Component.Styles.css';
 import { ICar } from "../../../../interfaces/ICar.Interface";
 import { useNavigate } from "react-router";
 import LikeButton from "../../../../Shared/LikeButton/LikeButton";
+import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
 
 interface ICarCardProps {
     Car: ICar | undefined;
@@ -47,12 +48,8 @@ const CarCard: React.FC<ICarCardProps> = (props): JSX.Element => {
                         </p>
                     </div>
                     <div className="card-buttons-section">
-                        <button type="button" className="card-btn" onClick={handleDetailsClick}>
-                            Details
-                        </button>
-                        <button type="button" className="card-btn" onClick={handleOrderClick}>
-                            Order
-                        </button>
+                        <PrimaryButton width="48%" height="2em" label="Details" onClick={handleDetailsClick}/>
+                        <PrimaryButton width="48%" height="2em" label="Order" onClick={handleOrderClick}/>
                     </div>
                 </section>
             </article>

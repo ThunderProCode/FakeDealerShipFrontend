@@ -9,7 +9,7 @@ import { useDrop } from 'react-dnd';
 import { ICar } from '../../interfaces/ICar.Interface';
 import CompareCarCard from './Components/CompareCarCard/CompareCarCard';
 import DropDownMenu from '../../Shared/DropDownMenu/DropDownMenu.Component';
-import CarDetailsCard from '../Inventory/Components/CarDetailsCard/CarDetailsCard';
+import CarDetailsCard from '../../Shared/CarDetailsCard/CarDetailsCard';
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const CompareView: React.FC = (): JSX.Element => {

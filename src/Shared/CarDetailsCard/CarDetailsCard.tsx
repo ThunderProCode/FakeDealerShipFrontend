@@ -1,10 +1,11 @@
 import React,{ useState } from 'react';
 import './CarDetailsCard.css';
-import { ICar } from '../../../../interfaces/ICar.Interface';
-import LikeButton from '../../../../Shared/LikeButton/LikeButton';
+import { ICar } from '../../interfaces/ICar.Interface';
+import LikeButton from '../LikeButton/LikeButton';
 import { FaCheckSquare } from "react-icons/fa";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { useNavigate } from 'react-router';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 interface CarDetailsCardProps {
     car:ICar;
@@ -73,7 +74,7 @@ const CarDetailsCard:React.FC<CarDetailsCardProps> = (props):JSX.Element => {
                     }
                 </ul>
             </section>
-            <button className="details-card-button" onClick={() => handleOrderClick}>Order This Car</button>
+            <PrimaryButton width="100%" height="4%" padding=".5em" label="Order This Car" onClick={handleOrderClick}/>
         </div>
     );
 }

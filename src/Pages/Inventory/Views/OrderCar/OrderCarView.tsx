@@ -1,11 +1,12 @@
 import React from "react";
 import './OrderCarView.css';
-import DropDownMenu from "../../../Shared/DropDownMenu/DropDownMenu.Component";
+import DropDownMenu from "../../../../Shared/DropDownMenu/DropDownMenu.Component";
 import { SiCashapp } from "react-icons/si";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store";
-import { getCarById } from "../../../Services/carService";
+import { RootState } from "../../../../store";
+import { getCarById } from "../../../../Services/carService";
+import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
 
 const OrderCarView:React.FC = ():JSX.Element => {
 
@@ -75,8 +76,8 @@ const OrderCarView:React.FC = ():JSX.Element => {
                         <li><span>Total: </span></li> 
                         </ul>
                         <div className="checkout-buttons">
-                            <button>Cancel Order</button>
-                            <button>Place Order</button>
+                            <PrimaryButton width="49%" label="Cancel Order" onClick={() => {}}/>
+                            <PrimaryButton width="49%" label="Place Order" onClick={() => {}}/>
                         </div>
                     </article>
                 </section>

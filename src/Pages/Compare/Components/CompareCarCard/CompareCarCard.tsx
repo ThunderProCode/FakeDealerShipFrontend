@@ -2,6 +2,7 @@ import React from 'react';
 import './CompareCarCard.css';
 import { ICar } from '../../../../interfaces/ICar.Interface';
 import { useNavigate } from 'react-router';
+import PrimaryButton from '../../../../Shared/PrimaryButton/PrimaryButton';
 
 interface CompareCarCardProps {
     Car:ICar;
@@ -37,8 +38,8 @@ const CompareCarCard:React.FC<CompareCarCardProps> = (props):JSX.Element => {
                     <p><span>Price: </span>{ `${Car.price}` }</p>
                 </div>
                 <div className="compare-buttons">
-                    <button className="compare-btn" onClick={handleOrderClick}>Order this car</button>
-                    <button className="compare-btn" onClick={() => resetFunction() }>Compare Other</button>
+                    <PrimaryButton  width="48%" height="30%" padding="1em" label="Order This Car" onClick={handleOrderClick}/>
+                    <PrimaryButton  width="48%" height="30%" padding="1em" label="Compare Other" onClick={resetFunction}/>
                 </div>
             </section>
         </div>
