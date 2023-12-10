@@ -193,7 +193,6 @@
 
     .car-view-mobile {
         display: flex;
-        overflow: scroll;
         width: 90%;
         height: 100%;
     }

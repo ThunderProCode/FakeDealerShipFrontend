@@ -60,6 +60,8 @@
     border: none;
     border-top-left-radius: .2em;
     border-bottom-left-radius: .2em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .search-bar:focus {
     outline: none;
@@ -92,8 +94,8 @@
     .filter-bar {
         margin-top: 0;
         width: 90%;
+        height: 20%;
         margin-bottom: 2em;
-        height: auto;
         flex-direction: column;
     }
 

@@ -4,7 +4,6 @@
     height: 90%;
     color: var(--text-color);
     border-radius: .5em;
-    
     background-color: var(--secondary-color);
 }
 
@@ -181,10 +180,8 @@
 @media (max-width: 700px) {
 
     .order-form {
-        margin-top: 0;
-        height: auto;
-        overflow: scroll;
-
+        margin-top: 8em;
+        min-height: 117.5%;
     }
 
     .form-content {
