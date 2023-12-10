@@ -4,16 +4,17 @@ import './PrimaryButton.css';
 
 interface PrimaryButtonProps {
     width: string,
-    height: string,
+    height?: string,
     label: string,
     fontSize?: string,
     padding?:string,
-    onClick : () => void
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick? : () => void
 }
 
 const PrimaryButton:React.FC<PrimaryButtonProps> = (props):JSX.Element => {
 
-    const { width, height, label,fontSize, padding ,onClick } = props;
+    const { width, height, label,fontSize, padding , type , onClick } = props;
 
     const buttonStyle = {
         width: width || '100%',
@@ -23,7 +24,7 @@ const PrimaryButton:React.FC<PrimaryButtonProps> = (props):JSX.Element => {
     }
 
     return (
-        <button className="primary-button-component" style={buttonStyle} onClick={onClick}>{ label }</button>
+        <button className="primary-button-component" style={buttonStyle} onClick={onClick} type={ type || "button" }>{ label }</button>
     );
 }
 

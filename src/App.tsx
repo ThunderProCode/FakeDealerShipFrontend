@@ -11,12 +11,12 @@ import HomeView from './Pages/Home/HomeView';
 import CompareView from './Pages/Compare/CompareView';
 import MyGarageView from './Pages/MyGarage/MyGarageView';
 import CarDetailsView from './Pages/Inventory/Views/CarDetailsView/CarDetailsView';
-import InventoryLayout from './Pages/Inventory/InventoryLayout/InventoryLayout';
+import InventoryLayout from './Pages/Inventory/Layout/InventoryLayout';
 import CardsView from './Pages/Inventory/Views/CardsView/CardsView';
 import MainLayout from './Pages/Layout/MainLayout';
 import OrderCarView from './Pages/Inventory/Views/OrderCar/OrderCarView';
 import LoginView from './Pages/Admin/Views/LoginView/LoginView';
-import AdminLayout from './Pages/Admin/AdminLayout/AdminLayout';
+import AdminLayout from './Pages/Admin/Layout/AdminLayout';
 
 
 const App:React.FC = (): JSX.Element => {
