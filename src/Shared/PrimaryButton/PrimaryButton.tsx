@@ -35,6 +35,7 @@ const PrimaryButton:React.FC<PrimaryButtonProps> = (props):JSX.Element => {
         fontSize: fontSize || '1em',
         padding: padding || '.2em',
         backgroundColor:  isHover ?  "#3e0000" : getBackgroundColor,
+        justifyContent: btnIcon ? "space-between" : "center"
     }
 
     return (

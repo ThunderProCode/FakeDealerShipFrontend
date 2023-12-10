@@ -29,7 +29,7 @@ const ManageCarsView:React.FC<ManageCarsViewProps> = (props):JSX.Element => {
                         <th className="left-column">Year</th>
                         <th className="left-column">Mileage</th>
                         <th className="right-column">
-                            <PrimaryButton width="30%" label="Add" backgroundColor="var(--secondary-color)" btnIcon={<><MdAddCircle/></>}/>
+                            <PrimaryButton width="30%" padding=".5em" label="Add" backgroundColor="var(--secondary-color)" btnIcon={<><MdAddCircle/></>}/>
                         </th>
                     </tr>
                 </thead>
@@ -43,9 +43,9 @@ const ManageCarsView:React.FC<ManageCarsViewProps> = (props):JSX.Element => {
                                     <td className="left-column">{ car.year }</td>
                                     <td className="left-column">{ car.mileage }</td>
                                     <td className="right-column">
-                                        <PrimaryButton width="20%" height="100%" label="View" padding=".5em" fontSize=".8em" btnIcon={<><MdRemoveRedEye/></>}/>
-                                        <PrimaryButton width="20%" height="100%" label="Edit" padding=".5em" fontSize=".8em" btnIcon={<><MdOutlineModeEdit/></>}/>
-                                        <PrimaryButton width="30%" height="100%" label="Remove" padding=".5em" fontSize=".8em" btnIcon={<><MdDelete/></>}/>
+                                        <PrimaryButton width="20%" height="100%" label="View" padding=".5em" fontSize=".9em" btnIcon={<><MdRemoveRedEye/></>}/>
+                                        <PrimaryButton width="20%" height="100%" label="Edit" padding=".5em" fontSize=".9em" btnIcon={<><MdOutlineModeEdit/></>}/>
+                                        <PrimaryButton width="24%" height="100%" label="Remove" padding=".5em" fontSize=".9em" btnIcon={<><MdDelete/></>}/>
                                     </td>
                             </tr>
                         );

@@ -4,6 +4,8 @@ import Logo from '../../assets/svgs/Logo.svg';
 import './Navbar.Component.Styles.css';
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
+import { MdLogout } from "react-icons/md";
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 // import { FaLocationDot } from "react-icons/fa6";
 
 interface NavbarProps {
@@ -54,6 +56,25 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
         }
     }
 
+    const getInfoLinks = ():JSX.Element => {
+        if(admin){
+            return(
+                <>
+                    <PrimaryButton width="20%" padding=".5em" label="Logout" btnIcon={<><MdLogout/></>}/>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <li className="nav-info-link-container">
+                        <FaPhoneAlt className="nav-icon"/>
+                        <Link to='/' className="nav-info-link">+1-435-315-786</Link>
+                    </li>
+                </>
+            );
+        }
+    }
+
     return(
         <>
             <nav className='nav-bar'>
@@ -72,14 +93,9 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
                         }
                     </ul>
                     <ul className="nav-info-links">
-                        <li className="nav-info-link-container">
-                            <FaPhoneAlt className="nav-icon"/>
-                            <Link to='/' className="nav-info-link">+1-435-315-786</Link>
-                        </li>
-                        {/* <li className="nav-info-link-container">
-                            <FaLocationDot className="nav-icon"/>
-                            <Link to='/' className="nav-info-link">12 Giggle Gardens, Chuckletopia 98765</Link>
-                        </li> */}
+                        {
+                            getInfoLinks()
+                        }
                     </ul>
                 </div>
             </nav>
