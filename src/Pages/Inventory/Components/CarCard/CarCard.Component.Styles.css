@@ -115,6 +115,11 @@
         margin-top: 0;
         margin-bottom: 1em;
         width: 80%;
-        height: 70%;
+        height: auto;
+    }
+
+    .card-description {
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 }

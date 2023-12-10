@@ -254,6 +254,24 @@
     }
 
     .nav-links {
+        width: 80%;
+    }
+
+    .nav-info-links {
+        width: 20%;
+    }   
+}
+
+@media (min-width: 1200px) {
+    .nav-bar-header {
+        width: 15%;
+    }
+
+    .nav-links-container {
+        width: 85%;
+    }
+
+    .nav-links {
         width: 85%;
     }
 
