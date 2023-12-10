@@ -1,21 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ILoginData } from "../interfaces/ILoginData.interface";
+import { IUserData } from "../interfaces/IUserData";
 
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-const userToken = localStorage.getItem('userToken') ? localStorage.getItem('userToken') : null;
+const userData = localStorage.getItem('userData') ? localStorage.getItem('userData') : null;
 
 interface authState {
     loading: boolean,
-    userToken: string | null,
+    userData: string | null,
     error: any | null,
     success: boolean
 }
 
 const initialState:authState = {
     loading: false,
-    userToken,
+    userData,
     error: null,
     success: false,
 }
@@ -30,8 +31,8 @@ export const userLogin = createAsyncThunk('auth/login',async (loginData:ILoginDa
         }
 
         const { data } = await axios.post(`${BASE_URL}/Authenticate/login`, { username,password }, config);
-
-        localStorage.setItem('userToken', data.userToken);
+        console.log(data);
+        localStorage.setItem('userData', JSON.stringify(data));
         return data;
 
     } catch (error:any) {
@@ -54,8 +55,7 @@ const userSlice = createSlice({
         })
         .addCase(userLogin.fulfilled, (state, action) => {
             state.loading = false;
-            state.userToken = action.payload.token;
-            console.log(action.payload.token);
+            state.userData = action.payload;
         })
         .addCase(userLogin.rejected, (state, action) => {
             state.loading = false;

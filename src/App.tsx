@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import store from './store';
+import { RootState } from './store';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { DndProvider } from 'react-dnd/dist/core';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
@@ -17,9 +17,12 @@ import MainLayout from './Pages/Layout/MainLayout';
 import OrderCarView from './Pages/Inventory/Views/OrderCar/OrderCarView';
 import LoginView from './Pages/Admin/Views/LoginView/LoginView';
 import AdminLayout from './Pages/Admin/Layout/AdminLayout';
+import ManageCarsView from './Pages/Admin/Views/ManageCarsView/ManageCarsView';
 
 
 const App:React.FC = (): JSX.Element => {
+
+  const { userData } = useSelector((state:RootState) => state.auth);
 
   const mainRoutes = {
     path: '/',
@@ -69,16 +72,20 @@ const App:React.FC = (): JSX.Element => {
         path: 'login',
         element: <LoginView/>,
         children: []
+      },
+      {
+        path: 'inventory',
+        element: <ManageCarsView userData={userData} />,
+        children: [],
       }
     ]
   }
 
   const routing = useRoutes([mainRoutes,inventoryRoute,myGarageRoute, adminRoute]);
+
   return (
     <DndProvider backend={HTML5Backend}>
-      <Provider store={store}>
-        {routing}
-      </Provider>
+      {routing}
     </DndProvider>
   );
 }

@@ -24,7 +24,7 @@ store.dispatch(fetchCars()); // Fetch cars when the store is created
 store.dispatch(fetchMakes()); // Fetch makes when the store is created
 
 store.subscribe(() => {
-    localStorage.setItem('liked-cars', JSON.stringify(store.getState()));
+    localStorage.setItem('liked-cars', JSON.stringify({ likedCars : store.getState().likedCars, filterBy: store.getState().filterBy }));
 });
 
 export type RootState = ReturnType<typeof store.getState>

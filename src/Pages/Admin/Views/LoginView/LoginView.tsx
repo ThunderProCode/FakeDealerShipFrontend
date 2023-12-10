@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginView.css";
 import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
 import { useNavigate } from "react-router";
@@ -12,6 +12,7 @@ const LoginView:React.FC = ():JSX.Element => {
     const dispatch = useDispatch<AppDispatch>();
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
+    const { userData } = useSelector((state:RootState) => state.auth);
     
     const handleGoBackClick = ():void => {
         navigate('/');
@@ -19,10 +20,14 @@ const LoginView:React.FC = ():JSX.Element => {
     
     const handleSubmit = (e:React.FormEvent) => {
         e.preventDefault();
-        console.log('Username: ', username);
-        console.log('Password: ', password);
         dispatch( userLogin({username,password}) );
     }
+
+    useEffect(() => {
+        if(userData) {
+            navigate('/admin/inventory');
+        }
+    }, [navigate, userData]);
 
     return(
         <>
