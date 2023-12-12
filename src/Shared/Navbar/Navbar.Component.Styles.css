@@ -261,21 +261,3 @@
         width: 20%;
     }   
 }
-
-@media (min-width: 1200px) {
-    .nav-bar-header {
-        width: 15%;
-    }
-
-    .nav-links-container {
-        width: 85%;
-    }
-
-    .nav-links {
-        width: 85%;
-    }
-
-    .nav-info-links {
-        width: 15%;
-    }   
-}
