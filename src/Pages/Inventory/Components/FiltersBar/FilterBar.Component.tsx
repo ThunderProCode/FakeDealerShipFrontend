@@ -44,7 +44,6 @@ const FilterBar:React.FC<FilterBarProps> = (props):JSX.Element => {
                 <FilterButton title="Year"/>
                 <FilterButton title="Price"/>
                 <button className='reset-btn' onClick={handleMakeClick}>Make</button>
-                {/* <button className="reset-btn" onClick={handleReset}>Reset <BiReset/></button> */}
 
             </section>
             <form className="search-bar-container">

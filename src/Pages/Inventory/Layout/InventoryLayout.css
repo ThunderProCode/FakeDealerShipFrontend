@@ -1,8 +1,7 @@
 .inventory-page {
     margin-top: 8em;
-
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
 
     padding: 0;
     padding-bottom: 2em;
@@ -37,6 +36,6 @@
 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
