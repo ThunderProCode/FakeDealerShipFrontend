@@ -2,6 +2,7 @@ import React from 'react';
 import './InventoryLayout.css';
 import { Outlet } from 'react-router';
 import Navbar from '../../../Shared/Navbar/Navbar.Component';
+import Footer from '../../../Shared/Footer/Footer';
 
 const InventoryLayout:React.FC = ():JSX.Element => {
     return(
@@ -10,6 +11,7 @@ const InventoryLayout:React.FC = ():JSX.Element => {
             <div className="inventory-page">
                 <Outlet/>
             </div>
+            <Footer />
         </>
     );
 }
