@@ -114,7 +114,7 @@
 @media (max-width: 700px) {
 
     .nav-bar {
-        position: sticky;
+        position: fixed;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
