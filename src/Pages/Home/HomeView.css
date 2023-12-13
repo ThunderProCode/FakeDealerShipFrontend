@@ -1,4 +1,6 @@
 .home-page {
+    margin-top: 6em;
+
     width: 100%;
     min-height: 100vh;
 
@@ -46,6 +48,7 @@
 @media (max-width: 700px) {
 
     .home-page {
+        margin-top: 0em;
         background-image: url('../../assets/images/background-mobile.jpg');
         background-size: 100%;
         background-position: bottom 0 right 0;
