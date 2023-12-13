@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import { ILoginData } from "../interfaces/ILoginData.interface";
 
@@ -45,7 +45,14 @@ export const userLogin = createAsyncThunk('auth/login',async (loginData:ILoginDa
 const userSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout: (state) => {
+            state.userData = null
+            state.loading = false
+            state.success = false
+            state.error = false
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(userLogin.pending, (state) => {
             state.loading = true;
@@ -62,5 +69,5 @@ const userSlice = createSlice({
     }
 })
 
-
+export const { logout } = userSlice.actions;
 export default userSlice.reducer;

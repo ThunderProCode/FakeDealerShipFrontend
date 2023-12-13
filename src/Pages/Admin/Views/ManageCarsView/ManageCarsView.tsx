@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './ManageCarsView.css';
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import PrimaryButton from "../../../../Shared/PrimaryButton/PrimaryButton";
@@ -12,12 +12,16 @@ interface ManageCarsViewProps {
 
 const ManageCarsView:React.FC<ManageCarsViewProps> = (props):JSX.Element => {
 
-    const { userData } = props;
     const cars = useSelector((state:RootState) => state.cars.data);
+    const navigate = useNavigate();
+    const { userData } = useSelector((state:RootState) => state.auth);
 
-    if(!userData){
-        return <Navigate to="/admin" replace />
-    }
+
+    useEffect(() => {
+        if(!userData){
+            navigate("/admin");
+        }
+    },[userData, navigate])
 
     return (
         <>

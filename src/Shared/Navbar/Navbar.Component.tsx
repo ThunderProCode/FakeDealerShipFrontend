@@ -6,6 +6,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { logout } from '../../features/userSlice';
+import { useDispatch } from 'react-redux';
 
 interface NavbarProps {
     admin: boolean;
@@ -15,8 +17,8 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
 
     const { admin, user } = props;
-
     const [ folded, setFolded ] = useState<boolean>(false);
+    const dispatch = useDispatch();
 
     const handleMobileMenu = () => {
         setFolded(!folded);
@@ -28,6 +30,11 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
 
     const getClassName = ({isActive}: {isActive:boolean}):string => {
         return isActive ? "nav-link selected" : "nav-link";
+    }
+
+    const clickLogout = () => {
+        localStorage.removeItem("userData");
+        dispatch(logout());
     }
 
     const getNavLinks = ():JSX.Element => {
@@ -59,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = (props): JSX.Element => {
         if(admin){
             return(
                 <>
-                    <PrimaryButton width="100%" padding=".5em" label="Logout" btnIcon={<><MdLogout/></>}/>
+                    <PrimaryButton width="100%" padding=".5em" label="Logout" onClick={clickLogout} btnIcon={<><MdLogout/></>}/>
                 </>
             );
         } else {
