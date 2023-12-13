@@ -9,14 +9,13 @@
 .inventory-cards-container {
     margin: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
 
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-evenly;
-    overflow: scroll;
 }
 
 .inventory-cards-container::-webkit-scrollbar {
@@ -38,15 +37,16 @@ p {
 }
 
 @media (max-width: 700px) {
+
     .inventory-cards-container {
         margin: 0; 
         width: 100%;
-        min-height: 100%;
+        height: 100%;
 
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        overflow:visible;
     }
+
 }

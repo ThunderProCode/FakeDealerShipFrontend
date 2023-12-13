@@ -1,7 +1,7 @@
 .car-card {
     margin-top: 1em;
     width: 26%;
-    height: 70%;
+    height: 60vh;
     
     background-color: var(--secondary-color);
     overflow: hidden;

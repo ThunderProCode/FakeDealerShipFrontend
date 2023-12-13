@@ -6,7 +6,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
-// import { FaLocationDot } from "react-icons/fa6";
 
 interface NavbarProps {
     admin: boolean;

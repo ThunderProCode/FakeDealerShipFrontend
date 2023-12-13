@@ -31,25 +31,27 @@ const LoginView:React.FC = ():JSX.Element => {
 
     return(
         <>
-            <form className="login-form" onSubmit={ (e) => handleSubmit(e)}>
-                <div className="login-form-title">
-                    <h2>Admin</h2>
-                </div>
-                <article className="login-form-content">
-                    <div className="login-form-control">
-                        <label htmlFor="login-username-input">Username: </label>
-                        <input name="login-username-input" type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
+            <div className="login-form-container">
+                <form className="login-form" onSubmit={ (e) => handleSubmit(e)}>
+                    <div className="login-form-title">
+                        <h2>Admin</h2>
                     </div>
-                    <div className="login-form-control">
-                        <label htmlFor="">Password: </label>
-                        <input name="login-password-input" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                    </div>
-                    <div className="login-buttons">
-                        <PrimaryButton width="49%" height="100%" label="Go Back" onClick={handleGoBackClick}/>
-                        <PrimaryButton width="49%" height="100%" label="Login" type="submit"/>
-                    </div>
-                </article>
-            </form>
+                    <article className="login-form-content">
+                        <div className="login-form-control">
+                            <label htmlFor="login-username-input">Username: </label>
+                            <input name="login-username-input" type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
+                        <div className="login-form-control">
+                            <label htmlFor="">Password: </label>
+                            <input name="login-password-input" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                        <div className="login-buttons">
+                            <PrimaryButton width="49%" height="100%" label="Go Back" onClick={handleGoBackClick}/>
+                            <PrimaryButton width="49%" height="100%" label="Login" type="submit"/>
+                        </div>
+                    </article>
+                </form>
+            </div>
         </>
     );
 }

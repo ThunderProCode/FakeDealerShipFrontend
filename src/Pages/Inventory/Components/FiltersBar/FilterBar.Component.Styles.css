@@ -101,10 +101,15 @@
 
     .filter-buttons {
         width: 100%;
+        justify-content: space-between;
     }
     
     .search-bar-container {
         margin-top: 1em;
         width: 100%;
+    }
+
+    .reset-btn {
+        margin: 0;
     }
 }
