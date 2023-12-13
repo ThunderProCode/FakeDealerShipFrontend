@@ -19,6 +19,7 @@ import LoginView from './Pages/Admin/Views/LoginView/LoginView';
 import AdminLayout from './Pages/Admin/Layout/AdminLayout';
 import ManageCarsView from './Pages/Admin/Views/ManageCarsView/ManageCarsView';
 import ManageOrdersView from './Pages/Admin/Views/ManageOrdersView/ManageOrdersView';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 const App:React.FC = (): JSX.Element => {
@@ -29,6 +30,7 @@ const App:React.FC = (): JSX.Element => {
     path: '/',
     element: <MainLayout />,
     children: [
+      { path: '*', element: <NotFound /> },
       { path: '/', element: <HomeView /> },
       { path: 'inventory', element: <Navigate to='inventory/cars'/> },
       { path: 'myGarage', element: <MyGarageView/> },
