@@ -1,0 +1,15 @@
+.notfound-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.notfound-page svg {
+    font-size: 8em;
+}
