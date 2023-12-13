@@ -2,7 +2,7 @@ import React from "react";
 import './OrderCarView.css';
 import DropDownMenu from "../../../../Shared/DropDownMenu/DropDownMenu.Component";
 import { SiCashapp } from "react-icons/si";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { getCarById } from "../../../../Services/carService";
@@ -14,6 +14,11 @@ const OrderCarView:React.FC = ():JSX.Element => {
     const cars = useSelector((state:RootState) => state.cars.data);
     const parsedCarId = carId? parseInt(carId, 10) : undefined;
     const car = getCarById(cars, parsedCarId);
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate(-1);
+    }
     
     const getFormContent = ():JSX.Element => {
         if(car){
@@ -76,7 +81,7 @@ const OrderCarView:React.FC = ():JSX.Element => {
                         <li><span>Total: </span></li> 
                         </ul>
                         <div className="checkout-buttons">
-                            <PrimaryButton width="49%" label="Cancel Order" onClick={() => {}}/>
+                            <PrimaryButton width="49%" label="Cancel Order" onClick={handleBackClick}/>
                             <PrimaryButton width="49%" label="Place Order" onClick={() => {}}/>
                         </div>
                     </article>
